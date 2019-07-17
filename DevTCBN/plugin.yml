@@ -1,5 +1,5 @@
 name: DevTCBN
-main: me.tcbndevelopment.BCPluginMain
+main: me.tcbndevelopment.DevTCBN
 version: 0.7.7
 description: TheCatBoxNetwork Dev's Plugin
 commands:
