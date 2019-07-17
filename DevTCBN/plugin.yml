@@ -1,0 +1,56 @@
+name: DevTCBN
+main: me.tcbndevelopment.BCPluginMain
+version: 0.7.6
+description: TheCatBoxNetwork Dev's Plugin
+commands:
+   test:
+      description: Checks For Errors
+      usage: /<command>
+   wlme:
+      description: Error
+      usage: /<command>
+   bed:
+      description: Checks For Errors
+      usage: /<command>
+   setbed:
+      description: Checks For Errors
+      usage: /<command>
+   srvinfo:
+      description: Basic Server Info
+      usage: /<command>
+   ops:
+      description: Lists Operators
+      usage: /<command>
+   whitelisted:
+      description: Lists Whitelist
+      usage: /<command>
+   inp:
+      description: INPROGRESS
+      usage: /<command>
+   staffcheck:
+      description: Checks All Information
+      usage: /<command>
+   feed:
+      description: Feeds You
+      usage: /<command>
+   bcfly:
+      description: Lets You Fly
+      usage: /<command> <args>
+   pos:
+      description: Gives Location
+      usage: /<command>
+   heal:
+      description: Heals you
+      usage: /<command>
+   gmc:
+      description: Changes Your Gamemode To Creative
+      usage: /<command>
+   gma:
+      description: Changes Your Gamemode To Adventure
+      usage: /<command>
+   gms:
+      description: Changes Your Gamemode To Survival
+      usage: /<command>
+   gmsp:
+      description: Changes Your Gamemode To Spectator
+      usage: /<command>
