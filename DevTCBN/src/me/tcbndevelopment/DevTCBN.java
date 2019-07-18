@@ -26,8 +26,8 @@ public class DevTCBN extends JavaPlugin {
         System.out.println(msg);
     }
     
-	public Permission playerPermission = new Permission("bc.staff");
-	public Permission playerPermission1 = new Permission("bc.gamemode");
+	public Permission playerPermission = new Permission("devtcbn.staff");
+	public Permission playerPermission1 = new Permission("devtcbn.gamemode");
 	public Permission playerPermission2 = new Permission("devtcbn.admin.force");
 	
 	@Override
@@ -111,7 +111,7 @@ public class DevTCBN extends JavaPlugin {
 		if (cmd.getName().equalsIgnoreCase("wlme") && sender instanceof Player) {
 			
 			Player player = (Player) sender;
-			if(player.hasPermission("bc.staff") && player.hasPermission("devtcbn.admin.force")) {
+			if(player.hasPermission("devtcbn.staff") && player.hasPermission("devtcbn.admin.force")) {
 			    if(args[0].equalsIgnoreCase("true")) {
 			        player.setWhitelisted(true);
 			        player.sendMessage(ChatColor.GREEN + "You Have Whitelisted Yourself");
@@ -164,7 +164,7 @@ public class DevTCBN extends JavaPlugin {
 		if (cmd.getName().equalsIgnoreCase("bcfly") && sender instanceof Player) {
 			
 			Player player = (Player) sender;
-			if(player.hasPermission("bc.staff")) {
+			if(player.hasPermission("devtcbn.fly")) {
 			    if(args[0].equalsIgnoreCase("true")) {
 			        player.setAllowFlight(true);
 			        player.setFlying(true);
@@ -180,6 +180,9 @@ public class DevTCBN extends JavaPlugin {
 				    player.sendMessage("Please use true or false as arguments");
 			    }
 			}
+			else {
+				player.sendMessage(ChatColor.RED + "You Don't Have Permission To Run This Command");
+			}
 			return true;
 			
 		}
@@ -188,7 +191,7 @@ public class DevTCBN extends JavaPlugin {
 			
 			Player player = (Player) sender;
 			
-			if(player.hasPermission("bc.heal")) {
+			if(player.hasPermission("devtcbn.heal")) {
 				player.setHealth(20);
 				player.setFireTicks(0);
 				player.sendMessage(ChatColor.GREEN + "You Have Been Healed");
@@ -205,7 +208,7 @@ public class DevTCBN extends JavaPlugin {
 			
 			Player player = (Player) sender;
 			
-			if(player.hasPermission("bc.feed")) {
+			if(player.hasPermission("devtcbn.feed")) {
 				player.setFoodLevel(20);
 				player.setSaturation(20);
 				player.sendMessage(ChatColor.GREEN + "You Have Been Fed");
@@ -222,7 +225,7 @@ public class DevTCBN extends JavaPlugin {
 			
 			Player player = (Player) sender;
 		    
-			if(player.hasPermission("bc.gamemode")) {
+			if(player.hasPermission("devtcbn.gamemode")) {
 				player.setGameMode(GameMode.CREATIVE);
 				player.sendMessage(ChatColor.GREEN + "Gamemode set to Creative");
 			}
@@ -237,7 +240,7 @@ public class DevTCBN extends JavaPlugin {
 			
 			Player player = (Player) sender;
 		    
-			if(player.hasPermission("bc.gamemode")) {
+			if(player.hasPermission("devtcbn.gamemode")) {
 				player.setGameMode(GameMode.SURVIVAL);
 				player.sendMessage(ChatColor.GREEN + "Gamemode set to Survival");
 			}
@@ -252,7 +255,7 @@ public class DevTCBN extends JavaPlugin {
 			
 			Player player = (Player) sender;
 		    
-			if(player.hasPermission("bc.gamemode")) {
+			if(player.hasPermission("devtcbn.gamemode")) {
 				player.setGameMode(GameMode.ADVENTURE);
 				player.sendMessage(ChatColor.GREEN + "Gamemode set to Adventure");
 			}
@@ -267,7 +270,7 @@ public class DevTCBN extends JavaPlugin {
 			
 			Player player = (Player) sender;
 		    
-			if(player.hasPermission("bc.gamemode")) {
+			if(player.hasPermission("devtcbn.gamemode")) {
 				player.setGameMode(GameMode.SPECTATOR);
 				player.sendMessage(ChatColor.GREEN + "Gamemode set to Spectator");
 			}
@@ -283,7 +286,7 @@ public class DevTCBN extends JavaPlugin {
 			Player player = (Player) sender;
 			
 			
-			if (!player.hasPermission("bc.staff")) {
+			if (!player.hasPermission("devtcbn.staff")) {
 				player.sendMessage(ChatColor.GOLD + "[BCPlugin] " + ChatColor.WHITE + "Only Staff May Use This Command");
 			}
 			
@@ -292,7 +295,7 @@ public class DevTCBN extends JavaPlugin {
 			   player.sendMessage("Op: " + player.isOp() );
 			   player.sendMessage("Fly: " + player.isFlying() );
 			   player.sendMessage("Gamemode: " + player.getGameMode() );
-			   player.sendMessage("Staff Perm-Node: " + player.isPermissionSet("bc.staff"));
+			   player.sendMessage("Staff Perm-Node: " + player.isPermissionSet("devtcbn.staff"));
 			   player.sendMessage("Sleeping Ignored: " + player.isSleepingIgnored());
 			   player.sendMessage("Whitelisted: " + player.isWhitelisted());
 			   player.sendMessage("Whitelist Status: " + Bukkit.hasWhitelist());
