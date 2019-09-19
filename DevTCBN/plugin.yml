@@ -1,28 +1,10 @@
-name: DevTCBN
+name: DevTCBN1144
 main: me.tcbndevelopment.DevTCBN
-version: 0.7.7_r1
+version: 0.0.1_a1
 description: TheCatBoxNetwork Dev's Plugin
 commands:
    test:
       description: Checks For Errors
-      usage: /<command>
-   wlme:
-      description: Error
-      usage: /<command>
-   bed:
-      description: Checks For Errors
-      usage: /<command>
-   setbed:
-      description: Checks For Errors
-      usage: /<command>
-   srvinfo:
-      description: Basic Server Info
-      usage: /<command>
-   ops:
-      description: Lists Operators
-      usage: /<command>
-   whitelisted:
-      description: Lists Whitelist
       usage: /<command>
    inp:
       description: INPROGRESS
@@ -30,16 +12,19 @@ commands:
    staffcheck:
       description: Checks All Information
       usage: /<command>
-   feed:
+   chelp:
+      description: DevTCBN Help
+      usage: /<command>
+   cfeed:
       description: Feeds You
       usage: /<command>
-   bcfly:
+   cfly:
       description: Lets You Fly
       usage: /<command> <args>
    pos:
       description: Gives Location
       usage: /<command>
-   heal:
+   cheal:
       description: Heals you
       usage: /<command>
    gmc:
