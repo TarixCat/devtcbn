@@ -72,11 +72,33 @@ public class DevTCBN extends JavaPlugin {
 			
 		}
 		
-		if (cmd.getName().equalsIgnoreCase("tcbnhelp") && sender instanceof Player) {
+		if (cmd.getName().equalsIgnoreCase("chelp") && sender instanceof Player) {
 			
 			Player player = (Player) sender;
 			
-			player.sendMessage(ChatColor.GOLD + "COMMAND IN PROGRESS");
+			player.sendMessage(ChatColor.GOLD + "-------Help-------");
+			player.sendMessage(ChatColor.GOLD + "inp: Debug testing");
+			player.sendMessage(ChatColor.GOLD + "test: Debug testing");
+			player.sendMessage(ChatColor.GOLD + "pos: Prints position");
+			if(player.hasPermission("devtcbn.staff") || player.hasPermission("devtcbn.gamemode")) {
+				player.sendMessage(ChatColor.GOLD + "gma: Gamemode Adventure");
+				player.sendMessage(ChatColor.GOLD + "gms: Gamemode Survival");
+				player.sendMessage(ChatColor.GOLD + "gmsp: Gamemode Spectator");
+				player.sendMessage(ChatColor.GOLD + "gmc: Gamemode Creative");
+			}
+			if(player.hasPermission("devtcbn.staff") || player.hasPermission("devtcbn.fly")) {
+				player.sendMessage(ChatColor.GOLD + "fly: Flight Powers on or off?");
+			}
+			if(player.hasPermission("devtcbn.staff") || player.hasPermission("devtcbn.heal")) {
+				player.sendMessage(ChatColor.GOLD + "heal: Heals you");
+			}
+			if(player.hasPermission("devtcbn.staff") || player.hasPermission("devtcbn.feed")) {
+				player.sendMessage(ChatColor.GOLD + "feed: Feeds you");
+			}
+			else {
+			    player.getDisplayName();
+			}
+			player.sendMessage(ChatColor.GOLD + "------------------");
 			
 			return true;
 			
