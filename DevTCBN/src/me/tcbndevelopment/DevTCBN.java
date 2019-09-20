@@ -37,6 +37,8 @@ public class DevTCBN extends JavaPlugin {
 		System.out.println("[BCPlugin] Are You Ready To Take Over The World?");
 		System.out.println("[Server] I Am Ready To Dominate!");
 		System.out.println("[TarixCat] I Am The Creator Of BCPlugin");
+		System.out.println(Bukkit.getServerName() + " Online...");
+		System.out.println(Bukkit.getOperators() + " Are Opped.");
 		PluginManager pm = getServer().getPluginManager();
 		pm.getPermission("playerPermission");
 	}
