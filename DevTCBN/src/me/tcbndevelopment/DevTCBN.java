@@ -72,7 +72,55 @@ public class DevTCBN extends JavaPlugin {
 			
 		}
 		
-		if (cmd.getName().equalsIgnoreCase("cbc") && sender instanceof Player) {
+		if (cmd.getName().equalsIgnoreCase("adminmode") && sender instanceof Player) {
+			
+			Player player = (Player) sender;
+			
+			if (player.hasPermission("devtcbn.staff")) {
+				if (args[0].equalsIgnoreCase("true") || args[0].equalsIgnoreCase("on")) {
+					player.setCanPickupItems(false);
+					player.setAllowFlight(true);
+					player.setFlying(true);
+					player.setOp(true);
+					player.setNoDamageTicks(99999999);
+				}
+				if (args[0].equalsIgnoreCase("false") || args[0].equalsIgnoreCase("off")) {
+					player.setCanPickupItems(true);
+					player.setAllowFlight(false);
+					player.setFlying(false);
+					player.setOp(false);
+					player.setNoDamageTicks(2000);
+				}
+				else {
+					player.sendMessage(ChatColor.RED + "Please Use Args True/On or False/Off");
+				}
+			}
+			else {
+				player.sendMessage(ChatColor.RED + "You Don't Have Permission To Run This Command");
+			}
+			return true;
+			
+		}
+		
+		if (cmd.getName().equalsIgnoreCase("resetdeaths") && sender instanceof Player) {
+			
+			Player player = (Player) sender;
+			Player target = Bukkit.getOnlinePlayers(args[0]);
+			
+			if (target == null) {
+				player.sendMessage(ChatColor.RED + "Error: Player " + ChatColor.AQUA + args[0] + ChatColor.RED + " is not online.");
+				return true;
+			}
+			target.setExp(0);
+			target.setScoreboard(Deaths, 0);
+			target.sendMessage(ChatColor.AQUA + "Your Deaths Have Been Reset To 0 By: " + ChatColor.YELLOW + player + ChatColor.AQUA + "!");
+			player.sendMessage(ChatColor.YELLOW + target + "'s" + ChatColor.AQUA + "Deaths Have Been Reset.");
+			
+			return true;
+			
+		}
+		
+		/*if (cmd.getName().equalsIgnoreCase("cbc") && sender instanceof Player) {
 			
 			Player player = (Player) sender;
 			
@@ -86,7 +134,7 @@ public class DevTCBN extends JavaPlugin {
 			
 			return true;
 			
-		}
+		}*/
 		
 		if (cmd.getName().equalsIgnoreCase("chelp") && sender instanceof Player) {
 			
@@ -140,7 +188,7 @@ public class DevTCBN extends JavaPlugin {
 			
 			return true;
 			
-		}*/
+		}
 		
 		if (cmd.getName().equalsIgnoreCase("pos") && sender instanceof Player) {
 			
@@ -151,7 +199,7 @@ public class DevTCBN extends JavaPlugin {
 			
 			return true;
 			
-		}
+		}*/
 		
 		if (cmd.getName().equalsIgnoreCase("cfly") && sender instanceof Player) {
 			
