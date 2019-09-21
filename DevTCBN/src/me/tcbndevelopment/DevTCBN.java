@@ -102,7 +102,7 @@ public class DevTCBN extends JavaPlugin {
 			
 		}
 		
-		if (cmd.getName().equalsIgnoreCase("resetdeaths") && sender instanceof Player) {
+		if (cmd.getName().equalsIgnoreCase("resetdeaths")) {
 			
 			Player player = (Player) sender;
 			Player target = Bukkit.getOnlinePlayers(args[0]);
