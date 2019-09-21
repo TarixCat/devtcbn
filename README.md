@@ -11,3 +11,7 @@ The plugins internal name is DevTCBN1144.
 > Currently Working On: v0.0.1_a3
 
 **ALL ALPHA VERSIONS ARE SUBJECT TO REVISION**
+
+![Discord Banner 2](https://discordapp.com/api/guilds/582489654742220810/widget.png?style=banner2)
+
+Join Our Server To Get Hints About Updates + Other Fun Stuff
