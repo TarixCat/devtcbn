@@ -77,7 +77,12 @@ public class DevTCBN extends JavaPlugin {
 			Player player = (Player) sender;
 			
 			player.sendMessage(ChatColor.GOLD + "" + Bukkit.broadcastMessage("COMMAND IN PROGRESS"));
-			Bukkit.broadcastMessage(ChatColor.GOLD + "[Warining] " + ChatColor.RED + "Place Holder");
+			if(player.hasPermission("devtcbn.staff")) {
+				Bukkit.broadcastMessage(ChatColor.GOLD + "[Warining] " + ChatColor.RED + args[*]);
+			}
+			else {
+				player.sendMessage(ChatColor.RED + "You Don't Have Permission To Run This Command");
+			}
 			
 			return true;
 			
@@ -166,6 +171,9 @@ public class DevTCBN extends JavaPlugin {
 			    else {
 				    player.sendMessage("Please use true or false as arguments");
 			    }
+			}
+			else {
+				player.sendMessage(ChatColor.RED + "You Don't Have Permission To Run This Command");
 			}
 			return true;
 			
