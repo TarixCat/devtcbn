@@ -72,6 +72,17 @@ public class DevTCBN extends JavaPlugin {
 			
 		}
 		
+		if (cmd.getName().equalsIgnoreCase("cbc") && sender instanceof Player) {
+			
+			Player player = (Player) sender;
+			
+			player.sendMessage(ChatColor.GOLD + "" + Bukkit.broadcastMessage("COMMAND IN PROGRESS"));
+			Bukkit.broadcastMessage(ChatColor.GOLD + "[Warining] " + ChatColor.RED + "Place Holder");
+			
+			return true;
+			
+		}
+		
 		if (cmd.getName().equalsIgnoreCase("chelp") && sender instanceof Player) {
 			
 			Player player = (Player) sender;
