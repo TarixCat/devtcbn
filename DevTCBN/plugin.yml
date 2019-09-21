@@ -1,6 +1,6 @@
 name: DevTCBN1144
 main: me.tcbndevelopment.DevTCBN
-version: 0.0.1_a1
+version: 0.0.1_a3
 description: TheCatBoxNetwork Dev's Plugin
 commands:
    test:
@@ -9,6 +9,12 @@ commands:
    inp:
       description: INPROGRESS
       usage: /<command>
+   resetdeaths:
+      description: Resets Deaths For Players
+      usage: /<command>
+   adminmode:
+      description: Toggles Admin Mode
+      usage: /<command> <args>
    staffcheck:
       description: Checks All Information
       usage: /<command>
