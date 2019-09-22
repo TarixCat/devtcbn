@@ -11,6 +11,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scoreboard.Scoreboard;
 
 public class DevTCBN extends JavaPlugin {
 	
@@ -37,7 +38,7 @@ public class DevTCBN extends JavaPlugin {
 		System.out.println("[BCPlugin] Are You Ready To Take Over The World?");
 		System.out.println("[Server] I Am Ready To Dominate!");
 		System.out.println("[TarixCat] I Am The Creator Of BCPlugin");
-		System.out.println(Bukkit.getServerName() + " Online...");
+		System.out.println(Bukkit.getServer().getName() + " Online...");
 		System.out.println(Bukkit.getOperators() + " Are Opped.");
 		PluginManager pm = getServer().getPluginManager();
 		pm.getPermission("playerPermission");
@@ -102,23 +103,24 @@ public class DevTCBN extends JavaPlugin {
 			
 		}
 		
-		if (cmd.getName().equalsIgnoreCase("resetdeaths")) {
+		/*if (cmd.getName().equalsIgnoreCase("resetdeaths")) {
 			
 			Player player = (Player) sender;
-			Player target = Bukkit.getOnlinePlayers(args[0]);
+			Player target = Bukkit.getPlayer(args[0]);
+			Scoreboard Deaths = Bukkit.getServer().getScoreboardManager().getMainScoreboard();
 			
 			if (target == null) {
 				player.sendMessage(ChatColor.RED + "Error: Player " + ChatColor.AQUA + args[0] + ChatColor.RED + " is not online.");
 				return true;
 			}
 			target.setExp(0);
-			target.setScoreboard(Deaths, 0);
+			target.getScoreboard();
 			target.sendMessage(ChatColor.AQUA + "Your Deaths Have Been Reset To 0 By: " + ChatColor.YELLOW + player + ChatColor.AQUA + "!");
-			player.sendMessage(ChatColor.YELLOW + target + "'s" + ChatColor.AQUA + "Deaths Have Been Reset.");
+			player.sendMessage(ChatColor.YELLOW + target.getName() + "'s" + ChatColor.AQUA + "Deaths Have Been Reset.");
 			
 			return true;
 			
-		}
+		}*/
 		
 		/*if (cmd.getName().equalsIgnoreCase("cbc") && sender instanceof Player) {
 			
