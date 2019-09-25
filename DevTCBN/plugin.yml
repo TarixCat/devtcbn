@@ -9,6 +9,9 @@ commands:
    inp:
       description: INPROGRESS
       usage: /<command>
+   adminmode:
+      description: Admin Mode On/Off
+      usage: /<command> <args>
    resetdeaths:
       description: Resets Deaths For Players
       usage: /<command>
