@@ -44,6 +44,8 @@ public class DevTCBN extends JavaPlugin {
 		pm.getPermission("playerPermission");
 	}
 	
+	String test = "Currently In-Progress, pos, bed, setbed, advanced adminmode, modmode and resetdeaths";
+	
 	@Override
 	public void onDisable() {
 		
@@ -68,7 +70,7 @@ public class DevTCBN extends JavaPlugin {
 			Player player = (Player) sender;
 			
 			if (player.hasPermission("devtcbn.futureupdate")) {
-				player.sendMessage(ChatColor.DARK_RED + "Command In-Progress");
+				player.sendMessage(ChatColor.DARK_RED + test);
 			}
 			else {
 				return false;
@@ -96,7 +98,7 @@ public class DevTCBN extends JavaPlugin {
 					player.setOp(false);
 					player.setNoDamageTicks(2000);
 				}
-				else {
+				if(args[0].isEmpty()){
 					player.sendMessage(ChatColor.RED + "Please Use Args True/On or False/Off");
 				}
 			}
@@ -194,18 +196,18 @@ public class DevTCBN extends JavaPlugin {
 			
 			return true;
 			
-		}
+		}*/
 		
 		if (cmd.getName().equalsIgnoreCase("pos") && sender instanceof Player) {
 			
 			Player player = (Player) sender;
 			
 			player.sendMessage(ChatColor.GREEN + "Printing Location...");
-			player.sendMessage(ChatColor.GREEN + "Location X=" + player.getLocation().getX() + " Y=" + player.getLocation().getY() + " Z=" + player.getLocation().getZ());
+			player.sendMessage(ChatColor.GREEN + "Location X=" + player.getLocation().getBlockX() + " Y=" + player.getLocation().getBlockY() + " Z=" + player.getLocation().getBlockZ());
 			
 			return true;
 			
-		}*/
+		}
 		
 		if (cmd.getName().equalsIgnoreCase("cfly") && sender instanceof Player) {
 			
@@ -222,7 +224,7 @@ public class DevTCBN extends JavaPlugin {
 			        player.setNoDamageTicks(100);
 			        player.sendMessage(ChatColor.GREEN + "Flight Set To False");
 			    }
-			    else {
+			    if(args[0].isEmpty()) {
 				    player.sendMessage("Please use true or false as arguments");
 			    }
 			}
