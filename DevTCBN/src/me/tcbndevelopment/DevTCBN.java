@@ -102,7 +102,7 @@ public class DevTCBN extends JavaPlugin {
 			
 			Player player = (Player) sender;
 			
-			if (player.hasPermission("devtcbn.staff") || player.hasPermission(playerPermission7)) {
+			if (player.hasPermission("devtcbn.staff") || player.hasPermission("devtcbn.adminmode")) {
 				if (args[0].equalsIgnoreCase("true") || args[0].equalsIgnoreCase("on")) {
 					player.setCanPickupItems(false);
 					player.setAllowFlight(true);
@@ -117,7 +117,7 @@ public class DevTCBN extends JavaPlugin {
 					player.setOp(false);
 					player.setNoDamageTicks(2000);
 				}
-				else if(args[0].isEmpty() || args[0].equals("")){
+				else if(args[0].isEmpty() || args[0].contains(null)){
 					player.sendMessage(ChatColor.RED + "Please Use Args True/On or False/Off");
 					return false;
 				}
@@ -133,7 +133,7 @@ public class DevTCBN extends JavaPlugin {
 			
 			Player player = (Player) sender;
 			
-			if (player.hasPermission("devtcbn.staff") || player.hasPermission(playerPermission8)) {
+			if (player.hasPermission("devtcbn.staff") || player.hasPermission("devtcbn.modmode")) {
 				if (args[0].equalsIgnoreCase("true") || args[0].equalsIgnoreCase("on")) {
 					player.setCanPickupItems(false);
 					player.setGameMode(GameMode.SPECTATOR);
