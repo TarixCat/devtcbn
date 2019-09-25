@@ -142,7 +142,7 @@ public class DevTCBN extends JavaPlugin {
 				if (args[0].equalsIgnoreCase("false") || args[0].equalsIgnoreCase("off")) {
 					player.setCanPickupItems(true);
 					player.setGameMode(GameMode.SURVIVAL);
-					player.setNoDamageTicks(2000);
+					player.setNoDamageTicks(200);
 				}
 				else if (args[0].isEmpty() || args[0].equals("")){
 					player.sendMessage(ChatColor.RED + "Please Use Args True/On or False/Off");
