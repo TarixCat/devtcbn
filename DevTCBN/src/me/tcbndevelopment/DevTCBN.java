@@ -31,6 +31,7 @@ public class DevTCBN extends JavaPlugin {
     public Permission playerPermission2 = new Permission("devtcbn.feed");
     public Permission playerPermission3 = new Permission("devtcbn.heal");
     public Permission playerPermission4 = new Permission("devtcbn.fly");
+    public Permission playerPermission5 = new Permission("devtcbn.futureupdate");
 	
 	@Override
 	public void onEnable() {
