@@ -66,7 +66,9 @@ public class DevTCBN extends JavaPlugin {
 			
 			Player player = (Player) sender;
 			
-			player.sendMessage(ChatColor.GOLD + "" + Bukkit.broadcastMessage("COMMAND IN PROGRESS"));
+			if (player.hasPermission("devtcbn.futureupdate")) {
+				player.sendMessage(ChatColor.DARK_RED + "Command In-Progress");
+			}
 			
 			return true;
 			
