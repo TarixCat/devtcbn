@@ -69,7 +69,9 @@ public class DevTCBN extends JavaPlugin {
 			if (player.hasPermission("devtcbn.futureupdate")) {
 				player.sendMessage(ChatColor.DARK_RED + "Command In-Progress");
 			}
-			
+			else {
+				return false;
+			}
 			return true;
 			
 		}
