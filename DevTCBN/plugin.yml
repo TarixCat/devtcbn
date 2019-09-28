@@ -1,6 +1,6 @@
 name: DevTCBN1144
 main: me.tcbndevelopment.DevTCBN
-version: 0.0.1_a4
+version: 0.0.1_a5
 description: TheCatBoxNetwork Dev's Plugin
 commands:
    test:
@@ -38,6 +38,9 @@ commands:
       usage: /<command> <args>
    pos:
       description: Gives Location
+      usage: /<command>
+   tellpos:
+      description: Gives Location To Others
       usage: /<command>
    cheal:
       description: Heals you
