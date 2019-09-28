@@ -265,6 +265,17 @@ public class DevTCBN extends JavaPlugin {
 			
 		}
 		
+		if (cmd.getName().equalsIgnoreCase("tellpos") && sender instanceof Player) {
+			
+			Player player = (Player) sender;
+			
+			player.sendMessage(ChatColor.GREEN + "Printing Location...");
+			this.getServer().broadcastMessage(ChatColor.GREEN + "Player: " + ChatColor.WHITE + player.getName() + ChatColor.GREEN + "Location X=" + player.getLocation().getBlockX() + " Y=" + player.getLocation().getBlockY() + " Z=" + player.getLocation().getBlockZ());
+			
+			return true;
+			
+		}
+		
 		if (cmd.getName().equalsIgnoreCase("cfly") && sender instanceof Player) {
 			
 			Player player = (Player) sender;
