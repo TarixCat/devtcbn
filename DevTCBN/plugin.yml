@@ -41,7 +41,7 @@ commands:
       usage: /<command>
    wb:
       description: Workbench
-      usage:/<command>
+      usage: /<command>
    tellpos:
       description: Gives Location To Others
       usage: /<command>
