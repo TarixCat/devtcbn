@@ -39,6 +39,9 @@ commands:
    pos:
       description: Gives Location
       usage: /<command>
+   wb:
+      description: Workbench
+      usage:/<command>
    tellpos:
       description: Gives Location To Others
       usage: /<command>
