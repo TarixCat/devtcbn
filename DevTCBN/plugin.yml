@@ -14,7 +14,7 @@ commands:
       usage: /<command>
    adminmode:
       description: Admin Mode On/Off
-      usage: /<command> <args>
+      usage: /<command> on/off
    modmode:
       description: Mod Mode On/Off
       usage: /<command> on/off
@@ -35,7 +35,7 @@ commands:
       usage: /<command>
    cfly:
       description: Lets You Fly
-      usage: /<command> <args>
+      usage: /<command> on/off
    pos:
       description: Gives Location
       usage: /<command>
