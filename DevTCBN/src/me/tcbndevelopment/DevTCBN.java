@@ -264,7 +264,7 @@ public class DevTCBN extends JavaPlugin {
 			
 		}
 		
-		if (cmd.getName().equalsIgnoreCase("getpos") && sender instanceof Player) {
+		if (cmd.getName().equalsIgnoreCase("otherpos") && sender instanceof Player) {
 			
 			Player player = (Player) sender;
 			Player target = Bukkit.getPlayer(args[0]);
@@ -292,6 +292,18 @@ public class DevTCBN extends JavaPlugin {
 			Player player = (Player) sender;
 			
 			player.openWorkbench(null, true);
+			
+			return true;
+			
+		}
+		
+		if (cmd.getName().equalsIgnoreCase("update") && sender instanceof Player) {
+			
+			Player player = (Player) sender;
+			
+			if (player.hasPermission("devtcbn.update") || player.getName().equals("TarixCat")) {
+				this.getServer().broadcastMessage(ChatColor.RED + "Warning: " + ChatColor.YELLOW + "Reloading Plugins Expect Lag...");
+			}
 			
 			return true;
 			
