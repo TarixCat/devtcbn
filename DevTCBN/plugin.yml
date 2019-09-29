@@ -17,7 +17,7 @@ commands:
       usage: /<command> <args>
    modmode:
       description: Mod Mode On/Off
-      usage: /<command> <args>
+      usage: /<command> on/off
    resetdeaths:
       description: Resets Deaths For Players
       usage: /<command>

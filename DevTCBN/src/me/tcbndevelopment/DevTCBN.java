@@ -92,7 +92,7 @@ public class DevTCBN extends JavaPlugin {
 				player.sendMessage(ChatColor.DARK_RED + test);
 			}
 			else {
-				return false;
+				return true;
 			}
 			return true;
 			
@@ -119,7 +119,7 @@ public class DevTCBN extends JavaPlugin {
 				}
 				else if(args[0].isEmpty() || args[0].contains(null)){
 					player.sendMessage(ChatColor.RED + "Please Use Args True/On or False/Off");
-					return false;
+					return true;
 				}
 			}
 			else {
@@ -145,7 +145,6 @@ public class DevTCBN extends JavaPlugin {
 					player.setNoDamageTicks(200);
 				}
 				else if (args[0].isEmpty() || args[0].equals("")){
-					player.sendMessage(ChatColor.RED + "Please Use Args True/On or False/Off");
 					return false;
 				}
 			}
@@ -265,12 +264,34 @@ public class DevTCBN extends JavaPlugin {
 			
 		}
 		
+		if (cmd.getName().equalsIgnoreCase("getpos") && sender instanceof Player) {
+			
+			Player player = (Player) sender;
+			Player target = Bukkit.getPlayer(args[0]);
+			
+			player.sendMessage(ChatColor.GREEN + "Printing Target Location...");
+			player.sendMessage(ChatColor.GREEN + "Location X=" + target.getLocation().getBlockX() + " Y=" + target.getLocation().getBlockY() + " Z=" + target.getLocation().getBlockZ());
+			
+			return true;
+			
+		}
+		
 		if (cmd.getName().equalsIgnoreCase("tellpos") && sender instanceof Player) {
 			
 			Player player = (Player) sender;
 			
 			player.sendMessage(ChatColor.GREEN + "Printing Location...");
 			this.getServer().broadcastMessage(ChatColor.GREEN + "Player: " + ChatColor.WHITE + player.getName() + ChatColor.GREEN + "Location X=" + player.getLocation().getBlockX() + " Y=" + player.getLocation().getBlockY() + " Z=" + player.getLocation().getBlockZ());
+			
+			return true;
+			
+		}
+		
+		if (cmd.getName().equalsIgnoreCase("wb") && sender instanceof Player) {
+			
+			Player player = (Player) sender;
+			
+			player.openWorkbench(null, true);
 			
 			return true;
 			
