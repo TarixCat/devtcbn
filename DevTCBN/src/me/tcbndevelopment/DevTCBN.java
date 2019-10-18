@@ -14,6 +14,17 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class DevTCBN extends JavaPlugin {
 	
+	public boolean BloodMoonEvent;
+	
+    public boolean toggleBloodMoonEvent() {
+        BloodMoonEvent = !BloodMoonEvent; //negation so if it is true it will be turned into false if it is false it will be turned to true
+        return BloodMoonEvent;
+    }
+    
+    public boolean isBloodMoonEvent() {
+        return BloodMoonEvent;
+    }
+	
     public static void sendMessage(Player p, String msg) {
         p.sendMessage(ChatColor.translateAlternateColorCodes('&', msg));
     }
@@ -38,6 +49,7 @@ public class DevTCBN extends JavaPlugin {
 	
 	@Override
 	public void onEnable() {
+		getServer().getPluginManager().registerEvents(new DevTCBNListener(), this);
 		System.out.println("[BCPlugin] Are You Ready To Take Over The World?");
 		System.out.println("[Server] I Am Ready To Dominate!");
 		System.out.println("[TarixCat] I Am The Creator Of BCPlugin");
@@ -57,6 +69,28 @@ public class DevTCBN extends JavaPlugin {
 	
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+		
+		if (cmd.getName().equalsIgnoreCase("test") && sender instanceof Player) {
+			
+			Player player = (Player) sender;
+			
+			player.sendMessage(ChatColor.GOLD + "Hello, " + player.getDisplayName() + "! This Is A Test!");
+			
+			return true;
+			
+		}
+		
+		if (cmd.getName().equalsIgnoreCase("bloodmoontoggle") && sender instanceof Player) {
+			
+			Player player = (Player) sender;
+			
+			player.sendMessage(ChatColor.RED + "Blood Moon Toggled To: " + isBloodMoonEvent());
+			toggleBloodMoonEvent();
+			
+			
+			return true;
+			
+		}
 		
 		if (cmd.getName().equalsIgnoreCase("test") && sender instanceof Player) {
 			
