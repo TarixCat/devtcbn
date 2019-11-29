@@ -2,6 +2,7 @@ package me.tcbndevelopment;
 
 import java.util.logging.Level;
 
+import me.tcbndevelopment.cmdgroups.GamemodeGroup;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
@@ -15,6 +16,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 
 public class DevTCBN extends JavaPlugin {
+	
+	GamemodeGroup gmgr = new GamemodeGroup();
 	
 	FileConfiguration config = this.getConfig();
 	
@@ -49,6 +52,7 @@ public class DevTCBN extends JavaPlugin {
 		System.out.println(Bukkit.getServer().getName() + " Online...");
 		PluginManager pm = getServer().getPluginManager();
 		pm.getPermission("playerPermission");
+		this.getCommand("gma").setExecutor(gmgr);
 	}
 	
 	String test = "Currently In-Progress, pos, bed, setbed, advanced adminmode, modmode and resetdeaths";
@@ -328,66 +332,6 @@ public class DevTCBN extends JavaPlugin {
 			return true;
 			
 		}
-
-		if (cmd.getName().equalsIgnoreCase("gmc") && sender instanceof Player) {
-			
-			Player player = (Player) sender;
-		    
-			if(player.hasPermission("devtcbn.gamemode")) {
-				player.setGameMode(GameMode.CREATIVE);
-				player.sendMessage(ChatColor.GREEN + "Gamemode set to Creative");
-			}
-		    else {
-				player.sendMessage(ChatColor.RED + "You Don't Have Permission To Run This Command");
-			}
-			return true;
-			
-		}
-		
-		if (cmd.getName().equalsIgnoreCase("gms") && sender instanceof Player) {
-			
-			Player player = (Player) sender;
-		    
-			if(player.hasPermission("devtcbn.gamemode")) {
-				player.setGameMode(GameMode.SURVIVAL);
-				player.sendMessage(ChatColor.GREEN + "Gamemode set to Survival");
-			}
-		    else {
-				player.sendMessage(ChatColor.RED + "You Don't Have Permission To Run This Command");
-			}
-			return true;
-			
-		}
-		
-		if (cmd.getName().equalsIgnoreCase("gma") && sender instanceof Player) {
-			
-			Player player = (Player) sender;
-		    
-			if(player.hasPermission("devtcbn.gamemode")) {
-				player.setGameMode(GameMode.ADVENTURE);
-				player.sendMessage(ChatColor.GREEN + "Gamemode set to Adventure");
-			}
-		    else {
-				player.sendMessage(ChatColor.RED + "You Don't Have Permission To Run This Command");
-			}
-			return true;
-			
-		}
-		
-		if (cmd.getName().equalsIgnoreCase("gmsp") && sender instanceof Player) {
-			
-			Player player = (Player) sender;
-		    
-			if(player.hasPermission("devtcbn.gamemode")) {
-				player.setGameMode(GameMode.SPECTATOR);
-				player.sendMessage(ChatColor.GREEN + "Gamemode set to Spectator");
-			}
-		    else {
-				player.sendMessage(ChatColor.RED + "You Don't Have Permission To Run This Command");
-			}
-			return true;
-			
-		}
 		
 		if (cmd.getName().equalsIgnoreCase("staffcheck") && sender instanceof Player) {
 			
@@ -420,7 +364,7 @@ public class DevTCBN extends JavaPlugin {
 			sender.sendMessage(ChatColor.GOLD + "L, you don't know how to use this...");
 		}
 		
-		return false;
+		return true;
 	}
 
 }
