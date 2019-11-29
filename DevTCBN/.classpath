@@ -4,5 +4,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="C:/Users/ADMIN/Desktop/BukkitSpigot Source Code/spigot-1.14.4.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ADMIN/Desktop/BukkitSpigot Source Code/spigot-1.8.8-R0.1-SNAPSHOT-latest.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ADMIN/Downloads/TheAPI.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

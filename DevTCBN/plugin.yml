@@ -1,7 +1,9 @@
 name: DevTCBN1144
 main: me.tcbndevelopment.DevTCBN
-version: 0.0.1_a5
+version: 0.0.1_a6
 description: TheCatBoxNetwork Dev's Plugin
+prefix: DevTCBN
+authors: [TarixCat, TheCatBoxNetwork, TCBN, DevTCBN]
 commands:
    test:
       description: Checks For Errors
