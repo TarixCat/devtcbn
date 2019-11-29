@@ -209,28 +209,6 @@ public class DevTCBN extends JavaPlugin {
 			
 		}
 		
-		/*if (cmd.getName().equalsIgnoreCase("setbed") && sender instanceof Player) {
-			
-			Player player = (Player) sender;
-			
-			//player.setBedSpawnLocation(player.getLocation());
-			player.sendMessage(ChatColor.RED + "DISABLED");
-			
-			return true;
-			
-		}
-		
-		if (cmd.getName().equalsIgnoreCase("bed") && sender instanceof Player) {
-			
-			Player player = (Player) sender;
-			
-			//player.teleport(player.getBedSpawnLocation());
-			player.sendMessage(ChatColor.RED + "DISABLED");
-			
-			return true;
-			
-		}*/
-		
 		if (cmd.getName().equalsIgnoreCase("pos") && sender instanceof Player) {
 			
 			Player player = (Player) sender;
