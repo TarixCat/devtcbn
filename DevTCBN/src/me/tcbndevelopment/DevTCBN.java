@@ -70,14 +70,6 @@ public class DevTCBN extends JavaPlugin {
 			
 		}
 		
-		if (cmd.getName().equalsIgnoreCase("fff") && sender instanceof Player) {
-			
-
-			
-			return true;
-			
-		}
-		
 		if (cmd.getName().equalsIgnoreCase("devtcbn") && sender instanceof Player) {
 			
 			Player player = (Player) sender;
