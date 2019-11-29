@@ -20,9 +20,6 @@ commands:
    modmode:
       description: Mod Mode On/Off
       usage: /<command> on/off
-   resetdeaths:
-      description: Resets Deaths For Players
-      usage: /<command>
    adminmode:
       description: Toggles Admin Mode
       usage: /<command> <args>
