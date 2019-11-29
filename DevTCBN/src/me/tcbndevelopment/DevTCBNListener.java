@@ -5,7 +5,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryCreativeEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
-//Why doesn't this push to GitHub
 
 public class DevTCBNListener implements Listener {
 	
