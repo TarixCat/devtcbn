@@ -3,6 +3,8 @@ package me.tcbndevelopment;
 import java.util.logging.Level;
 
 import me.tcbndevelopment.cmdgroups.GamemodeGroup;
+import me.tcbndevelopment.cmdgroups.PosGroup;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
@@ -18,6 +20,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class DevTCBN extends JavaPlugin {
 	
 	GamemodeGroup gmgr = new GamemodeGroup();
+	PosGroup psgr = new PosGroup();
 	
 	FileConfiguration config = this.getConfig();
 	
@@ -52,7 +55,15 @@ public class DevTCBN extends JavaPlugin {
 		System.out.println(Bukkit.getServer().getName() + " Online...");
 		PluginManager pm = getServer().getPluginManager();
 		pm.getPermission("playerPermission");
+		
+		this.getCommand("gms").setExecutor(gmgr);
+		this.getCommand("gmc").setExecutor(gmgr);
+		this.getCommand("gmsp").setExecutor(gmgr);
 		this.getCommand("gma").setExecutor(gmgr);
+		
+		this.getCommand("tellpos").setExecutor(psgr);
+		this.getCommand("otherpos").setExecutor(psgr);
+		this.getCommand("pos").setExecutor(psgr);
 	}
 	
 	String test = "Currently In-Progress, pos, bed, setbed, advanced adminmode, modmode and resetdeaths";
@@ -208,41 +219,6 @@ public class DevTCBN extends JavaPlugin {
 			    player.getDisplayName();
 			}
 			player.sendMessage(ChatColor.GOLD + "------------------");
-			
-			return true;
-			
-		}
-		
-		if (cmd.getName().equalsIgnoreCase("pos") && sender instanceof Player) {
-			
-			Player player = (Player) sender;
-			
-			player.sendMessage(ChatColor.GREEN + "Printing Location...");
-			player.sendMessage(ChatColor.GREEN + "Location X=" + player.getLocation().getBlockX() + " Y=" + player.getLocation().getBlockY() + " Z=" + player.getLocation().getBlockZ());
-
-			
-			return true;
-			
-		}
-		
-		if (cmd.getName().equalsIgnoreCase("otherpos") && sender instanceof Player) {
-			
-			Player player = (Player) sender;
-			Player target = Bukkit.getPlayer(args[0]);
-			
-			player.sendMessage(ChatColor.GREEN + "Printing Target Location...");
-			player.sendMessage(ChatColor.GREEN + "Location X=" + target.getLocation().getBlockX() + " Y=" + target.getLocation().getBlockY() + " Z=" + target.getLocation().getBlockZ());
-			
-			return true;
-			
-		}
-		
-		if (cmd.getName().equalsIgnoreCase("tellpos") && sender instanceof Player) {
-			
-			Player player = (Player) sender;
-			
-			player.sendMessage(ChatColor.GREEN + "Printing Location...");
-			this.getServer().broadcastMessage(ChatColor.GREEN + "Player: " + ChatColor.WHITE + player.getName() + ChatColor.GREEN + "Location X=" + player.getLocation().getBlockX() + " Y=" + player.getLocation().getBlockY() + " Z=" + player.getLocation().getBlockZ());
 			
 			return true;
 			
