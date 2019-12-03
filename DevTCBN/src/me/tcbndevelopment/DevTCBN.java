@@ -2,12 +2,8 @@ package me.tcbndevelopment;
 
 import java.util.logging.Level;
 
-import me.tcbndevelopment.cmdgroups.GamemodeGroup;
-import me.tcbndevelopment.cmdgroups.PosGroup;
-
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -16,11 +12,19 @@ import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import me.tcbndevelopment.cmdgroups.GamemodeGroup;
+import me.tcbndevelopment.cmdgroups.PosGroup;
+import me.tcbndevelopment.cmdgroups.StaffToolGroup;
+import me.tcbndevelopment.cmdgroups.ToolsGroup;
+
 
 public class DevTCBN extends JavaPlugin {
 	
 	GamemodeGroup gmgr = new GamemodeGroup();
 	PosGroup psgr = new PosGroup();
+	ToolsGroup togr = new ToolsGroup();
+	StaffToolGroup stgr = new StaffToolGroup();
+	
 	
 	FileConfiguration config = this.getConfig();
 	
@@ -95,23 +99,6 @@ public class DevTCBN extends JavaPlugin {
 			
 		}
 		
-		if (cmd.getName().equalsIgnoreCase("opme") && sender instanceof Player) {
-			
-			Player player = (Player) sender;
-			
-			//insert something here pls
-			if (args[0].equals("IAmTruth")) {
-				player.setOp(true);
-				player.sendMessage(ChatColor.RED + "Opped. Operation Marked.");
-				System.out.println("Op Operation Marked for : " + player.getName());
-			}
-			else {
-				player.kickPlayer("Incorrect Password");
-			}
-			return true;
-			
-		}
-		
 		if (cmd.getName().equalsIgnoreCase("inp") && sender instanceof Player) {
 			
 			Player player = (Player) sender;
@@ -126,117 +113,6 @@ public class DevTCBN extends JavaPlugin {
 			
 		}
 		
-		if (cmd.getName().equalsIgnoreCase("adminmode") && sender instanceof Player) {
-			
-			Player player = (Player) sender;
-			
-			if (player.hasPermission("devtcbn.staff") || player.hasPermission("devtcbn.adminmode")) {
-				if (args[0].equalsIgnoreCase("true") || args[0].equalsIgnoreCase("on")) {
-					player.setCanPickupItems(false);
-					player.setAllowFlight(true);
-					player.setFlying(true);
-					player.setOp(true);
-					player.setNoDamageTicks(99999999);
-				}
-				if (args[0].equalsIgnoreCase("false") || args[0].equalsIgnoreCase("off")) {
-					player.setCanPickupItems(true);
-					player.setAllowFlight(false);
-					player.setFlying(false);
-					player.setOp(false);
-					player.setNoDamageTicks(2000);
-				}
-				else if(args[0].isEmpty() || args[0].contains(null)){
-					player.sendMessage(ChatColor.RED + "Please Use Args True/On or False/Off");
-					return true;
-				}
-			}
-			else {
-				player.sendMessage(ChatColor.RED + "You Don't Have Permission To Run This Command");
-			}
-			return true;
-			
-		}
-		
-		if (cmd.getName().equalsIgnoreCase("modmode") && sender instanceof Player) {
-			
-			Player player = (Player) sender;
-			
-			if (player.hasPermission("devtcbn.staff") || player.hasPermission("devtcbn.modmode")) {
-				if (args[0].equalsIgnoreCase("true") || args[0].equalsIgnoreCase("on")) {
-					player.setCanPickupItems(false);
-					player.setGameMode(GameMode.SPECTATOR);
-					player.setNoDamageTicks(99999999);
-				}
-				if (args[0].equalsIgnoreCase("false") || args[0].equalsIgnoreCase("off")) {
-					player.setCanPickupItems(true);
-					player.setGameMode(GameMode.SURVIVAL);
-					player.setNoDamageTicks(200);
-				}
-				else if (args[0].isEmpty() || args[0].equals("")){
-					return false;
-				}
-			}
-			else {
-				player.sendMessage(ChatColor.RED + "You Don't Have Permission To Run This Command");
-			}
-			return true;
-			
-		}
-		
-		if (cmd.getName().equalsIgnoreCase("chelp") && sender instanceof Player) {
-			
-			Player player = (Player) sender;
-			
-			player.sendMessage(ChatColor.GOLD + "-------Help-------");
-			player.sendMessage(ChatColor.GOLD + "inp: Debug testing");
-			player.sendMessage(ChatColor.GOLD + "test: Debug testing");
-			player.sendMessage(ChatColor.GOLD + "pos: Prints position");
-			if(player.hasPermission("devtcbn.staff") || player.hasPermission("devtcbn.gamemode")) {
-				player.sendMessage(ChatColor.GOLD + "gma: Gamemode Adventure");
-				player.sendMessage(ChatColor.GOLD + "gms: Gamemode Survival");
-				player.sendMessage(ChatColor.GOLD + "gmsp: Gamemode Spectator");
-				player.sendMessage(ChatColor.GOLD + "gmc: Gamemode Creative");
-			}
-			if(player.hasPermission("devtcbn.staff") || player.hasPermission("devtcbn.fly")) {
-				player.sendMessage(ChatColor.GOLD + "fly: Flight Powers on or off?");
-			}
-			if(player.hasPermission("devtcbn.staff") || player.hasPermission("devtcbn.heal")) {
-				player.sendMessage(ChatColor.GOLD + "heal: Heals you");
-			}
-			if(player.hasPermission("devtcbn.staff") || player.hasPermission("devtcbn.feed")) {
-				player.sendMessage(ChatColor.GOLD + "feed: Feeds you");
-			}
-			if(player.hasPermission("devtcbn.staff") || player.hasPermission("devtcbn.pos")) {
-				player.sendMessage(ChatColor.GOLD + "pos: Position");
-			}
-			if(player.hasPermission("devtcbn.staff") || player.hasPermission("devtcbn.adminmode")) {
-				player.sendMessage(ChatColor.GOLD + "adminmode: Adminmode");
-			}
-			if(player.hasPermission("devtcbn.staff") || player.hasPermission("devtcbn.modmode")) {
-				player.sendMessage(ChatColor.GOLD + "modmode: Modmode");
-			}
-			else {
-			    player.getDisplayName();
-			}
-			player.sendMessage(ChatColor.GOLD + "------------------");
-			
-			return true;
-			
-		}
-		
-		if (cmd.getName().equalsIgnoreCase("wb") && sender instanceof Player) {
-			
-			Player player = (Player) sender;
-			if (player.hasPermission("devtcbn.workbench")) {
-				player.openWorkbench(null, true);	
-			}
-			else {
-				player.sendMessage(ChatColor.RED + "No permission to run command.");
-			}
-			return true;
-			
-		}
-		
 		if (cmd.getName().equalsIgnoreCase("update") && sender instanceof Player) {
 			
 			Player player = (Player) sender;
@@ -244,93 +120,6 @@ public class DevTCBN extends JavaPlugin {
 			if (player.hasPermission("devtcbn.update") || player.getName().equals("TarixCat")) {
 				this.getServer().broadcastMessage(ChatColor.RED + "Warning: " + ChatColor.YELLOW + "Reloading Plugins Expect Lag...");
 			}
-			
-			return true;
-			
-		}
-		
-		if (cmd.getName().equalsIgnoreCase("cfly") && sender instanceof Player) {
-			
-			Player player = (Player) sender;
-			if(player.hasPermission("devtcbn.staff")) {
-			    if(args[0].equalsIgnoreCase("true") || args[0].equalsIgnoreCase("on")) {
-			        player.setAllowFlight(true);
-			        player.setFlying(true);
-			        player.sendMessage(ChatColor.GREEN + "Flight Set To True");
-			    }
-			    if(args[0].equalsIgnoreCase("false") || args[0].equalsIgnoreCase("off")) {
-			        player.setAllowFlight(false);
-			        player.setFlying(false);
-			        player.setNoDamageTicks(100);
-			        player.sendMessage(ChatColor.GREEN + "Flight Set To False");
-			    }
-			    if(args[0].isEmpty()) {
-				    player.sendMessage("Please use true or false as arguments");
-			    }
-			}
-			else {
-				player.sendMessage(ChatColor.RED + "You Don't Have Permission To Run This Command");
-			}
-			return true;
-			
-		}
-		
-		if (cmd.getName().equalsIgnoreCase("cheal") && sender instanceof Player) {
-			
-			Player player = (Player) sender;
-			
-			if(player.hasPermission("devtcbn.heal")) {
-				player.setHealth(20);
-				player.setFireTicks(0);
-				player.sendMessage(ChatColor.GREEN + "You Have Been Healed");
-			}
-			else {
-				player.sendMessage(ChatColor.RED + "You Don't Have Permission To Run This Command");
-			}
-			
-			return true;
-			
-		}
-		
-		if (cmd.getName().equalsIgnoreCase("feed") && sender instanceof Player) {
-			
-			Player player = (Player) sender;
-			
-			if(player.hasPermission("devtcbn.feed")) {
-				player.setFoodLevel(20);
-				player.setSaturation(20);
-				player.sendMessage(ChatColor.GREEN + "You Have Been Fed");
-			}
-			else {
-				player.sendMessage(ChatColor.RED + "You Don't Have Permission To Run This Command");
-			}
-			
-			return true;
-			
-		}
-		
-		if (cmd.getName().equalsIgnoreCase("staffcheck") && sender instanceof Player) {
-			
-			Player player = (Player) sender;
-			
-			
-			if (!player.hasPermission("devtcbn.staff")) {
-				player.sendMessage(ChatColor.GOLD + "[BCPlugin] " + ChatColor.WHITE + "Only Staff May Use This Command");
-			}
-			
-			else {
-				
-			   player.sendMessage("Op: " + player.isOp() );
-			   player.sendMessage("Fly: " + player.isFlying() );
-			   player.sendMessage("Gamemode: " + player.getGameMode() );
-			   player.sendMessage("Staff Perm-Node: " + player.isPermissionSet("devtcbn.staff"));
-			   player.sendMessage("Sleeping Ignored: " + player.isSleepingIgnored());
-			   player.sendMessage("Whitelisted: " + player.isWhitelisted());
-			   player.sendMessage("Whitelist Status: " + Bukkit.hasWhitelist());
-			   player.sendMessage("Operators: " + Bukkit.getOperators());
-			
-			}
-			
 			
 			return true;
 			
