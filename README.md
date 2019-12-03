@@ -9,14 +9,14 @@ Latest Pre-Release: ![GitHub Pre-Releases](https://img.shields.io/github/v/relea
 
 TheCatBoxNetwork's Lead-Owner, Head Of Staff, And Developers Random Bits Of Code To Use Within TheCatBoxNetworks Work Space.
 
-Folder DevTCBN is the Minecraft 1.14.4 and 1.8.8 Uncompiled Plugin.
-The plugins internal name is DevTCBN1144.
+Folder DevTCBN is the Minecraft 1.14.4 Uncompiled Plugin.
+The plugins internal name is DevTCBN1144 or DevTCBN.
 
-> Current Version: v0.0.1_a3 
+> Current Version: v0.0.1_a6 
 
-> (Not Been Released v0.0.1_a5)
+> (Not Been Released v0.0.1_a7)
 
-> Currently Working On: v0.0.1_a6
+> Currently Working On: v0.0.1_a7
 
 **ALL ALPHA VERSIONS ARE SUBJECT TO REVISION**
 
