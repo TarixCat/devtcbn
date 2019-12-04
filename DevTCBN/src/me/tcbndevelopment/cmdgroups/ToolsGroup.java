@@ -51,7 +51,7 @@ public class ToolsGroup implements CommandExecutor {
 			
 		}
 		
-		if (cmd.getName().equalsIgnoreCase("wb") && sender instanceof Player) {
+		if (cmd.getName().equalsIgnoreCase("cwb") && sender instanceof Player) {
 			
 			Player player = (Player) sender;
 			if (player.hasPermission("devtcbn.workbench")) {

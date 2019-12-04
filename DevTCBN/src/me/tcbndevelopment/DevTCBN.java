@@ -20,12 +20,6 @@ import me.tcbndevelopment.cmdgroups.ToolsGroup;
 
 public class DevTCBN extends JavaPlugin {
 	
-	GamemodeGroup gmgr = new GamemodeGroup();
-	PosGroup psgr = new PosGroup();
-	ToolsGroup togr = new ToolsGroup();
-	StaffToolGroup stgr = new StaffToolGroup();
-	
-	
 	FileConfiguration config = this.getConfig();
 	
     public static void sendMessage(Player p, String msg) {
@@ -50,6 +44,11 @@ public class DevTCBN extends JavaPlugin {
     public Permission playerPermission7 = new Permission("devtcbn.modmode");
     public Permission playerPermission8 = new Permission("devtcbn.pos");
 	
+	GamemodeGroup gmgr = new GamemodeGroup();
+	PosGroup psgr = new PosGroup();
+	ToolsGroup togr = new ToolsGroup();
+	StaffToolGroup stgr = new StaffToolGroup();
+    
 	@Override
 	public void onEnable() {
 		getServer().getPluginManager().registerEvents(new DevTCBNListener(), this);
@@ -68,6 +67,12 @@ public class DevTCBN extends JavaPlugin {
 		this.getCommand("tellpos").setExecutor(psgr);
 		this.getCommand("otherpos").setExecutor(psgr);
 		this.getCommand("pos").setExecutor(psgr);
+		
+		//this.getCommand("").setExecutor(gr);
+		this.getCommand("cheal").setExecutor(togr);
+		this.getCommand("cfly").setExecutor(togr);
+		this.getCommand("cfeed").setExecutor(togr);
+		
 	}
 	
 	String test = "Currently In-Progress, pos, bed, setbed, advanced adminmode, modmode and resetdeaths";
