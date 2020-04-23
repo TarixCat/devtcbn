@@ -7,7 +7,9 @@ Latest Release: ![GitHub Releases](https://img.shields.io/github/v/release/Tarix
 
 Latest Pre-Release: ![GitHub Pre-Releases](https://img.shields.io/github/v/release/TarixCat/devtcbn?include_prereleases) ![GitHub PreReleaseDate](https://img.shields.io/github/release-date-pre/TarixCat/devtcbn)
 
-TheCatBoxNetwork's Lead-Owner, Head Of Staff, And Developers Random Bits Of Code To Use Within TheCatBoxNetworks Work Space.
+TheCatBoxNetwork's Lead-Owner, Head Of Staff, And Developers Random Bits Of Code To Use Within TheCatBoxNetworks Work Space. 
+
+Default branch is update031 onwards
 
 > Current Version: v0.0.1_a6 
 
