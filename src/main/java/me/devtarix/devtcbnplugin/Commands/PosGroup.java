@@ -11,7 +11,7 @@ public class PosGroup implements CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
-        if (cmd.getName().equalsIgnoreCase("pos") && sender instanceof Player) {
+        if(cmd.getName().equalsIgnoreCase("pos") && sender instanceof Player) {
 
             Player player = (Player) sender;
 
@@ -21,13 +21,9 @@ public class PosGroup implements CommandExecutor {
 
             player.sendMessage(ChatColor.GREEN + "Printing Location...");
             player.sendMessage(ChatColor.GREEN + "Location X=" + blockX + " Y=" + blockY + " Z=" + blockZ + " DIM=" + player.getLocation().getWorld());
-
-
-            return true;
-
         }
 
-        if (cmd.getName().equalsIgnoreCase("otherpos") && sender instanceof Player) {
+        else if(cmd.getName().equalsIgnoreCase("otherpos") && sender instanceof Player) {
 
             Player player = (Player) sender;
 
@@ -39,12 +35,9 @@ public class PosGroup implements CommandExecutor {
 
             player.sendMessage(ChatColor.GREEN + "Printing Target Location...");
             player.sendMessage(ChatColor.GREEN + "Location X=" + TblockX + " Y=" + TblockY + " Z=" + TblockZ + " DIM=" + target.getLocation().getWorld());
-
-            return true;
-
         }
 
-        if (cmd.getName().equalsIgnoreCase("tellpos") && sender instanceof Player) {
+        else if(cmd.getName().equalsIgnoreCase("tellpos") && sender instanceof Player) {
 
             Player player = (Player) sender;
 
@@ -53,12 +46,11 @@ public class PosGroup implements CommandExecutor {
             double blockZ = player.getPlayer().getLocation().getBlockZ();
 
             player.sendMessage(ChatColor.GREEN + "Printing Location...");
-            Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Player: " + ChatColor.WHITE + player.getName() + ChatColor.GREEN + "Location X=" + blockX + " Y=" + blockY + " Z=" + blockZ + " DIM=" + player.getLocation().getWorld());
-
-            return true;
-
+            Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Player: " + ChatColor.WHITE + player.getName() + ChatColor.GREEN + " Location X=" + blockX + " Y=" + blockY + " Z=" + blockZ + " DIM=" + player.getLocation().getWorld());
         }
 
+        else {
+        }
         return true;
     }
 

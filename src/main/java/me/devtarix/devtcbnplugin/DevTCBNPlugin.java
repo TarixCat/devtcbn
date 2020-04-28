@@ -13,8 +13,6 @@ import java.util.logging.Level;
 
 public final class DevTCBNPlugin extends JavaPlugin {
 
-    FileConfiguration config = this.getConfig();
-
     public static void sendMessage(Player p, String msg) {
         p.sendMessage(ChatColor.translateAlternateColorCodes('&', msg));
     }
@@ -55,7 +53,6 @@ public final class DevTCBNPlugin extends JavaPlugin {
         System.out.println("[BCPlugin] Are You Ready To Take Over The World?");
         System.out.println("[Server] I Am Ready To Dominate!");
         System.out.println("[TarixCat] I Am The Creator Of BCPlugin");
-        System.out.println(Bukkit.getServer().getName() + " Online...");
         log(Level.INFO, "We are starting up..");
         log(Level.SEVERE, "This is a test do not panic...");
         PluginManager pm = getServer().getPluginManager();
@@ -84,6 +81,6 @@ public final class DevTCBNPlugin extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        this.saveDefaultConfig();
+        log(Level.INFO, "Shutting Down.");
     }
 }

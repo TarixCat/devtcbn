@@ -14,7 +14,7 @@ public class DevTCBNPluginListener implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         String playerName = event.getPlayer().getDisplayName();
 
-        if(playerName == "TarixCat") {
+        /*if(playerName == "TarixCat") {
             event.getPlayer().sendMessage(TarixColor + "Welcome " + playerName + "to the server. Since you are the maker of this plugin you can use dev bypass on everything.");
         }
         else if(playerName == "Personpacman") {
@@ -23,8 +23,8 @@ public class DevTCBNPluginListener implements Listener {
         else if(playerName == "TarixCat33") {
             event.getPlayer().sendMessage(TarixColor + "Welcome " + playerName + "to the server. You are an alt of TarixCat, you don't have any bypass commands.");
         }
-        else {
+        else {*/
             event.getPlayer().sendMessage("Welcome " + playerName + "to the server.");
-        }
+        //}
     }
 }
