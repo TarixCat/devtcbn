@@ -1,47 +1,45 @@
 name: DevTCBNPlugin
 version: @version@
 main: me.devtarix.devtcbnplugin.DevTCBNPlugin
-api-version: 1.13
-prefix: [DevTCBNPlugin]
+api-version: 1.15
+prefix: DevTCBNPlugin
 authors: [TarixCat, DevTarix, DevTCBN, TCBN, TheCatBoxNetwork, TCBNDevelopment]
 description: A sandbox plugin for Everyone's use
 commands:
   test:
     description: Checks For Errors
-    usage: /<command>
+    usage: /test
   inp:
     description: INPROGRESS
-    usage: /<command>
-  opme:
-    description: INPROGRESS
-    usage: /<command>
+    usage: /inp
   adminmode:
     description: Admin Mode On/Off
-    usage: /<command> on/off
+    usage: /adminmode on/off
   modmode:
     description: Mod Mode On/Off
-    usage: /<command> on/off
+    usage: /modmode on/off
   staffcheck:
     description: Checks All Information
-    usage: /<command>
+    usage: /staffcheck
   chelp:
     description: DevTCBN Help
-    usage: /<command>
+    usage: /chelp
   cfeed:
     description: Feeds You
-    usage: /<command>
+    usage: /cfeed
   cfly:
     description: Lets You Fly
-    usage: /<command> on/off
+    usage: /cfly on/off
   pos:
     description: Gives Location
-    usage: /<command>
+    usage: /pos
   otherpos:
     description: Other persons location
-    usage: /<command>
+    usage: /otherpos USER
   wb:
     description: Workbench
-    usage: /<command>
+    usage: /wb
+    aliases: [workbench, cwb, cworkbench]
   update:
     description: Warns of Update
     usage: /<command>
@@ -63,3 +61,5 @@ commands:
   gmsp:
     description: Changes Your Gamemode To Spectator
     usage: /<command>
+permissions:
+
