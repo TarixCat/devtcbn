@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
 public class GamemodeGroup implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
-        if (cmd.getName().equalsIgnoreCase("gmc") && sender instanceof Player) {
+        if(cmd.getName().equalsIgnoreCase("gmc") && sender instanceof Player) {
 
             Player player = (Player) sender;
 
@@ -21,11 +21,9 @@ public class GamemodeGroup implements CommandExecutor {
             else {
                 player.sendMessage(ChatColor.RED + "You Don't Have Permission To Run This Command");
             }
-            return true;
-
         }
 
-        if (cmd.getName().equalsIgnoreCase("gms") && sender instanceof Player) {
+        else if(cmd.getName().equalsIgnoreCase("gms") && sender instanceof Player) {
 
             Player player = (Player) sender;
 
@@ -36,11 +34,9 @@ public class GamemodeGroup implements CommandExecutor {
             else {
                 player.sendMessage(ChatColor.RED + "You Don't Have Permission To Run This Command");
             }
-            return true;
-
         }
 
-        if (cmd.getName().equalsIgnoreCase("gma") && sender instanceof Player) {
+        else if(cmd.getName().equalsIgnoreCase("gma") && sender instanceof Player) {
 
             Player player = (Player) sender;
 
@@ -51,11 +47,9 @@ public class GamemodeGroup implements CommandExecutor {
             else {
                 player.sendMessage(ChatColor.RED + "You Don't Have Permission To Run This Command");
             }
-            return true;
-
         }
 
-        if (cmd.getName().equalsIgnoreCase("gmsp") && sender instanceof Player) {
+        else if(cmd.getName().equalsIgnoreCase("gmsp") && sender instanceof Player) {
 
             Player player = (Player) sender;
 
@@ -66,9 +60,11 @@ public class GamemodeGroup implements CommandExecutor {
             else {
                 player.sendMessage(ChatColor.RED + "You Don't Have Permission To Run This Command");
             }
-            return true;
 
         }
-        return false;
+
+        else {
+        }
+        return true;
     }
 }

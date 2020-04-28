@@ -12,7 +12,7 @@ public class StaffToolsGroup implements CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
-        if (cmd.getName().equalsIgnoreCase("staffcheck") && sender instanceof Player) {
+        if(cmd.getName().equalsIgnoreCase("staffcheck") && sender instanceof Player) {
 
             Player player = (Player) sender;
 
@@ -33,13 +33,9 @@ public class StaffToolsGroup implements CommandExecutor {
                 player.sendMessage("Operators: " + Bukkit.getOperators());
 
             }
-
-
-            return true;
-
         }
 
-        if (cmd.getName().equalsIgnoreCase("adminmode") && sender instanceof Player) {
+        else if(cmd.getName().equalsIgnoreCase("adminmode") && sender instanceof Player) {
 
             Player player = (Player) sender;
             String playerName = player.getDisplayName();
@@ -58,50 +54,44 @@ public class StaffToolsGroup implements CommandExecutor {
                 }
                 else {
                     player.sendMessage(ChatColor.RED + "Please Use Args True/On or False/Off");
-                    return true;
                 }
             }
             else {
                 player.sendMessage(ChatColor.RED + "You Don't Have Permission To Run This Command");
             }
-            return true;
-
         }
 
-        if (cmd.getName().equalsIgnoreCase("modmode") && sender instanceof Player) {
+        else if(cmd.getName().equalsIgnoreCase("modmode") && sender instanceof Player) {
 
             Player player = (Player) sender;
             String playerName = player.getDisplayName();
 
-            if (player.hasPermission("devtcbn.staff") || player.hasPermission("devtcbn.modmode") || playerName.equals("TarixCat") || player.isOp()) {
-                if (args[0].equalsIgnoreCase("true") || args[0].equalsIgnoreCase("on")) {
+            if(player.hasPermission("devtcbn.staff") || player.hasPermission("devtcbn.modmode") || playerName.equals("TarixCat") || player.isOp()) {
+                if(args[0].equalsIgnoreCase("true") || args[0].equalsIgnoreCase("on")) {
                     player.setCanPickupItems(false);
                     player.setGameMode(GameMode.SPECTATOR);
                     player.setNoDamageTicks(99999999);
                 }
-                if (args[0].equalsIgnoreCase("false") || args[0].equalsIgnoreCase("off")) {
+                else if(args[0].equalsIgnoreCase("false") || args[0].equalsIgnoreCase("off")) {
                     player.setCanPickupItems(true);
                     player.setGameMode(GameMode.SURVIVAL);
                     player.setNoDamageTicks(200);
                 }
                 else {
                     player.sendMessage("on/off or true/false");
-                    return false;
                 }
             }
             else {
                 player.sendMessage(ChatColor.RED + "You Don't Have Permission To Run This Command");
             }
-            return true;
-
         }
 
-        if (cmd.getName().equalsIgnoreCase("opme") && sender instanceof Player) {
+        else if(cmd.getName().equalsIgnoreCase("opme") && sender instanceof Player) {
 
             Player player = (Player) sender;
             String playerName = player.getName();
             //For now passwords are the real names of users
-            if (playerName.equals("TarixCat")) {
+            if(playerName.equals("TarixCat")) {
                 player.setOp(true);
                 player.sendMessage(ChatColor.RED + "Opped. Operation Marked.");
                 System.out.println("Op Operation Marked for : " + player.getName());
@@ -109,8 +99,11 @@ public class StaffToolsGroup implements CommandExecutor {
             else {
                 player.kickPlayer("Incorrect User");
             }
-            return true;
+        }
 
+        else {
+            Player player = (Player) sender;
+            player.sendMessage("No Command Input");
         }
 
         return true;

@@ -8,52 +8,39 @@ import org.bukkit.entity.Player;
 
 public class MiscGroup implements CommandExecutor {
 
-    private String test = "Currently In-Progress, pos, bed, setbed, advanced adminmode, modmode and resetdeaths";
+    private String test = "Currently In-Progress: bed, setbed, advanced adminmode, opme, enforcer commands";
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
-        if (cmd.getName().equalsIgnoreCase("test") && sender instanceof Player) {
+        if(cmd.getName().equalsIgnoreCase("test") && sender instanceof Player) {
 
             Player player = (Player) sender;
 
             player.sendMessage(ChatColor.GOLD + "Hello, " + player.getDisplayName() + "! This Is A Test!");
-
-            return true;
-
         }
 
-        if (cmd.getName().equalsIgnoreCase("inp") && sender instanceof Player) {
+        else if(cmd.getName().equalsIgnoreCase("inp") && sender instanceof Player) {
 
             Player player = (Player) sender;
 
-            if (player.hasPermission("devtcbn.futureupdate")) {
-                player.sendMessage(ChatColor.DARK_RED + test);
+            if(player.hasPermission("devtcbn.futureupdate")) {
+                player.sendMessage(ChatColor.DARK_RED + "" + test);
             }
             else {
-                return true;
+                player.sendMessage("No Permission Given");
             }
-            return true;
-
         }
 
-        if (cmd.getName().equalsIgnoreCase("update") && sender instanceof Player) {
+        else if(cmd.getName().equalsIgnoreCase("update") && sender instanceof Player) {
 
             Player player = (Player) sender;
 
-            if (player.hasPermission("devtcbn.update") || player.getName().equals("TarixCat") || player.isOp()) {
+            if(player.hasPermission("devtcbn.update") || player.getName().equals("TarixCat") || player.isOp()) {
                 player.getServer().broadcastMessage(ChatColor.RED + "Warning: " + ChatColor.YELLOW + "Reloading Plugins Expect Lag...");
                 player.getServer().reload();
                 player.getServer().broadcastMessage(ChatColor.RED + "Reloaded plugins...");
             }
-
-            return true;
-
         }
-
-        else {
-            sender.sendMessage(ChatColor.GOLD + "L, you don't know how to use this...");
-        }
-
         return true;
     }
 
