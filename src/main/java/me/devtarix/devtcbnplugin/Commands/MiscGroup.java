@@ -23,7 +23,7 @@ public class MiscGroup implements CommandExecutor {
 
             Player player = (Player) sender;
 
-            if(player.hasPermission("devtcbn.futureupdate")) {
+            if(player.hasPermission("devtcbn.futureupdate") || player.isOp()) {
                 player.sendMessage(ChatColor.DARK_RED + "" + test);
             }
             else {
