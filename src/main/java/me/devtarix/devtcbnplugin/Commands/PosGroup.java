@@ -11,7 +11,9 @@ public class PosGroup implements CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
-        if(cmd.getName().equalsIgnoreCase("pos") && sender instanceof Player) {
+        String[] Pcm = {"pos", "otherpos", "tellpos"};
+
+        if(cmd.getName().equalsIgnoreCase(Pcm[0]) && sender instanceof Player) {
 
             Player player = (Player) sender;
 
@@ -23,7 +25,7 @@ public class PosGroup implements CommandExecutor {
             player.sendMessage(ChatColor.GREEN + "Location X=" + blockX + " Y=" + blockY + " Z=" + blockZ + " DIM=" + player.getLocation().getWorld());
         }
 
-        else if(cmd.getName().equalsIgnoreCase("otherpos") && sender instanceof Player) {
+        else if(cmd.getName().equalsIgnoreCase(Pcm[1]) && sender instanceof Player) {
 
             Player player = (Player) sender;
 
@@ -37,7 +39,7 @@ public class PosGroup implements CommandExecutor {
             player.sendMessage(ChatColor.GREEN + "Location X=" + TblockX + " Y=" + TblockY + " Z=" + TblockZ + " DIM=" + target.getLocation().getWorld());
         }
 
-        else if(cmd.getName().equalsIgnoreCase("tellpos") && sender instanceof Player) {
+        else if(cmd.getName().equalsIgnoreCase(Pcm[2]) && sender instanceof Player) {
 
             Player player = (Player) sender;
 
