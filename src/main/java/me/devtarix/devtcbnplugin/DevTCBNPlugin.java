@@ -1,9 +1,11 @@
 package me.devtarix.devtcbnplugin;
 
 import me.devtarix.devtcbnplugin.Commands.*;
+import me.devtarix.devtcbnplugin.Commands.MiscGroup.InProgress;
+import me.devtarix.devtcbnplugin.Commands.MiscGroup.PluginUpdate;
+import me.devtarix.devtcbnplugin.Commands.MiscGroup.Test;
 import org.bukkit.ChatColor;
 import org.bukkit.Bukkit;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.PluginManager;
@@ -45,7 +47,6 @@ public final class DevTCBNPlugin extends JavaPlugin {
     private PosGroup psgr = new PosGroup();
     private ToolsGroup togr = new ToolsGroup();
     private StaffToolsGroup stgr = new StaffToolsGroup();
-    private MiscGroup msgr = new MiscGroup();
 
     @Override
     public void onEnable() {
@@ -74,9 +75,9 @@ public final class DevTCBNPlugin extends JavaPlugin {
         this.getCommand("adminmode").setExecutor(stgr);
         this.getCommand("modmode").setExecutor(stgr);
         this.getCommand("staffcheck").setExecutor(stgr);
-        this.getCommand("test").setExecutor(msgr);
-        this.getCommand("inp").setExecutor(msgr);
-        this.getCommand("update").setExecutor(msgr);
+        this.getCommand("test").setExecutor(new Test());
+        this.getCommand("inp").setExecutor(new InProgress());
+        this.getCommand("update").setExecutor(new PluginUpdate());
     }
 
     @Override
