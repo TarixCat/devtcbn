@@ -9,11 +9,12 @@ Latest Pre-Release: ![GitHub Pre-Releases](https://img.shields.io/github/v/relea
 
 TheCatBoxNetwork's Lead-Owner, Head Of Staff, And Developers Random Bits Of Code To Use Within TheCatBoxNetworks Work Space. 
 
-Default branch is update031 onwards
+Default branch and current version is master branch,
+Currently Working On is update branch
 
 > Current Version: v0.3.1_release
 
-> Currently Working On: v0.4.0_a
+> Currently Working On: v0.3.4_alpha
 
 **ALL ALPHA VERSIONS ARE SUBJECT TO REVISION**
 
