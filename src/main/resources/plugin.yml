@@ -1,7 +1,7 @@
 name: DevTCBNPlugin
 version: @version@
 main: me.devtarix.devtcbnplugin.DevTCBNPlugin
-api-version: 1.15
+api-version: [1.15]
 prefix: DevTCBNPlugin
 authors: [TarixCat, DevTarix, DevTCBN, TCBN, TheCatBoxNetwork, TCBNDevelopment]
 description: A sandbox plugin for Everyone's use
@@ -61,5 +61,4 @@ commands:
   gmsp:
     description: Changes Your Gamemode To Spectator
     usage: /<command>
-permissions:
 

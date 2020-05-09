@@ -1,6 +1,5 @@
 package me.devtarix.devtcbnplugin;
 
-import me.devtarix.devtcbnplugin.Commands.*;
 import me.devtarix.devtcbnplugin.Commands.MiscGroup.InProgress;
 import me.devtarix.devtcbnplugin.Commands.MiscGroup.PluginUpdate;
 import me.devtarix.devtcbnplugin.Commands.MiscGroup.Test;
