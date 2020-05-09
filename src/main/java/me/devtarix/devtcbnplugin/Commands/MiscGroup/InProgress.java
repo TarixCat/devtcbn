@@ -40,6 +40,9 @@ public class InProgress implements CommandExecutor {
                 player.sendMessage("No Permission Given");
             }
         }
+        else{
+            System.out.println("Please run command In-Game. Thanks!");
+        }
         return true;
     }
 }
