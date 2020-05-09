@@ -4,6 +4,7 @@ import me.devtarix.devtcbnplugin.Commands.*;
 import me.devtarix.devtcbnplugin.Commands.MiscGroup.InProgress;
 import me.devtarix.devtcbnplugin.Commands.MiscGroup.PluginUpdate;
 import me.devtarix.devtcbnplugin.Commands.MiscGroup.Test;
+import me.devtarix.devtcbnplugin.Commands.ToolGroup.*;
 import org.bukkit.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -43,11 +44,6 @@ public final class DevTCBNPlugin extends JavaPlugin {
     public Permission playerPermission7 = new Permission("devtcbn.modmode");
     public Permission playerPermission8 = new Permission("devtcbn.pos");
 
-    private GamemodeGroup gmgr = new GamemodeGroup();
-    private PosGroup psgr = new PosGroup();
-    private ToolsGroup togr = new ToolsGroup();
-    private StaffToolsGroup stgr = new StaffToolsGroup();
-
     @Override
     public void onEnable() {
         getServer().getPluginManager().registerEvents(new DevTCBNPluginListener(), this);
@@ -57,24 +53,14 @@ public final class DevTCBNPlugin extends JavaPlugin {
         log(Level.INFO, "We are starting up..");
         log(Level.SEVERE, "This is a test do not panic...");
         PluginManager pm = getServer().getPluginManager();
-        pm.getPermission("playerPermission");
-
-        this.getCommand("gms").setExecutor(gmgr);
-        this.getCommand("gmc").setExecutor(gmgr);
-        this.getCommand("gmsp").setExecutor(gmgr);
-        this.getCommand("gma").setExecutor(gmgr);
-
-        this.getCommand("tellpos").setExecutor(psgr);
-        this.getCommand("otherpos").setExecutor(psgr);
-        this.getCommand("pos").setExecutor(psgr);
+        pm.addPermission(playerPermission);
 
         //this.getCommand("").setExecutor(gr);
-        this.getCommand("cheal").setExecutor(togr);
-        this.getCommand("cfly").setExecutor(togr);
-        this.getCommand("cfeed").setExecutor(togr);
-        this.getCommand("adminmode").setExecutor(stgr);
-        this.getCommand("modmode").setExecutor(stgr);
-        this.getCommand("staffcheck").setExecutor(stgr);
+        this.getCommand("cwb").setExecutor(new WorkBench());
+        this.getCommand("cheal").setExecutor(new Heal());
+        this.getCommand("cfly").setExecutor(new Fly());
+        this.getCommand("cfeed").setExecutor(new Feed());
+        this.getCommand("chelp").setExecutor(new Help());
         this.getCommand("test").setExecutor(new Test());
         this.getCommand("inp").setExecutor(new InProgress());
         this.getCommand("update").setExecutor(new PluginUpdate());
