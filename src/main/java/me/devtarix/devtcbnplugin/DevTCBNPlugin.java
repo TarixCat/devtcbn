@@ -11,9 +11,14 @@ import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 import java.util.logging.Level;
 
 public final class DevTCBNPlugin extends JavaPlugin {
+
+    public static List<UUID> flyToggle = new ArrayList<UUID>();
 
     public static void sendMessage(Player p, String msg) {
         p.sendMessage(ChatColor.translateAlternateColorCodes('&', msg));
