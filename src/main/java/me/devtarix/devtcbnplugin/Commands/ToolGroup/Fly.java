@@ -17,14 +17,14 @@ public class Fly implements CommandExecutor {
             Player player = (Player) sender;
 
             if(player.hasPermission("devtcbn.fly") || player.isOp() || player.getName().equals("TarixCat") || player.hasPermission("devtcbn.staff")) {
-                    if(args[0].equalsIgnoreCase("true") || args[0].equalsIgnoreCase("on") || !DevTCBNPlugin.flyToggle.contains(player.getUniqueId())) {
+                    if(!DevTCBNPlugin.flyToggle.contains(player.getUniqueId()) || args[0].equalsIgnoreCase("true") || args[0].equalsIgnoreCase("on")) {
                         player.setAllowFlight(true);
                         player.setFlying(true);
                         DevTCBNPlugin.flyToggle.add(player.getUniqueId());
                         player.sendMessage(ChatColor.GREEN + "Flight Set To True");
                         return true;
                     }
-                    else if(args[0].equalsIgnoreCase("false") || args[0].equalsIgnoreCase("off") || DevTCBNPlugin.flyToggle.contains(player.getUniqueId())) {
+                    else if(DevTCBNPlugin.flyToggle.contains(player.getUniqueId()) || args[0].equalsIgnoreCase("false") || args[0].equalsIgnoreCase("off")) {
                         player.setAllowFlight(false);
                         player.setFlying(false);
                         player.setNoDamageTicks(100);
