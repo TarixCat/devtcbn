@@ -22,16 +22,17 @@ public class InProgress implements CommandExecutor {
 
             if(player.hasPermission("devtcbn.futureupdate") || player.isOp()) {
                 player.sendMessage(ChatColor.DARK_RED + "Info Book Opened");
+                player.sendMessage(ChatColor.GOLD + test);
 
                 ItemStack UpdateBook = new ItemStack(Material.WRITTEN_BOOK);
 
                 BookMeta bookMeta = (BookMeta) UpdateBook.getItemMeta();
                 bookMeta.setAuthor("DevTCBN");
-                bookMeta.setTitle(ChatColor.GOLD + "Updates!");
+                bookMeta.setTitle("Updates!");
 
                 ArrayList<String> pages = new ArrayList<String>();
 
-                pages.add(ChatColor.GREEN + "Plugin Life Cycle: " + Inp[0] + n1 + "Note: Major Rewrites Currently Occuring." + n1 + "Currently In-Progress:" + n1 + "adminmode, modmode, fly. Fixing toggles.");
+                pages.add("Plugin Life Cycle: " + Inp[0] + n1 + "Note: Major Rewrites Currently Occuring." + n1 + "Currently In-Progress:" + n1 + "adminmode, modmode, fly. Fixing toggles.");
 
 
                 player.openBook(UpdateBook);
