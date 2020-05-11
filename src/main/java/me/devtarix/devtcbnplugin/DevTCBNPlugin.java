@@ -38,15 +38,9 @@ public final class DevTCBNPlugin extends JavaPlugin {
     double blockY = event.getPlayer().getLocation().getBlockY();
     double blockZ = event.getPlayer().getLocation().getBlockZ();
 */
-    public Permission playerPermission = new Permission("devtcbn.staff");
-    public Permission playerPermission1 = new Permission("devtcbn.gamemode");
-    public Permission playerPermission2 = new Permission("devtcbn.feed");
-    public Permission playerPermission3 = new Permission("devtcbn.heal");
-    public Permission playerPermission4 = new Permission("devtcbn.fly");
-    public Permission playerPermission5 = new Permission("devtcbn.futureupdate");
-    public Permission playerPermission6 = new Permission("devtcbn.adminmode");
-    public Permission playerPermission7 = new Permission("devtcbn.modmode");
-    public Permission playerPermission8 = new Permission("devtcbn.pos");
+    public Permission staffPermission = new Permission("devtcbn.staff");
+    public Permission wbPermission = new Permission("devtcbn.workbench");
+    public Permission healPermission = new Permission("devtcbn.heal");
 
     @Override
     public void onEnable() {
@@ -57,7 +51,7 @@ public final class DevTCBNPlugin extends JavaPlugin {
         log(Level.INFO, "We are starting up..");
         log(Level.SEVERE, "This is a test do not panic...");
         PluginManager pm = getServer().getPluginManager();
-        pm.addPermission(playerPermission);
+        pm.addPermission(staffPermission);
 
         //this.getCommand("").setExecutor(gr);
         this.getCommand("cwb").setExecutor(new WorkBench());

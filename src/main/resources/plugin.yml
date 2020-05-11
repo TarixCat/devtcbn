@@ -6,59 +6,75 @@ prefix: DevTCBNPlugin
 authors: [TarixCat, DevTarix, DevTCBN, TCBN, TheCatBoxNetwork, TCBNDevelopment]
 description: A sandbox plugin for Everyone's use
 commands:
-  test:
-    description: Checks For Errors
-    usage: /test
-  inp:
-    description: INPROGRESS
-    usage: /inp
-  adminmode:
-    description: Admin Mode On/Off
-    usage: /adminmode on/off
-  modmode:
-    description: Mod Mode On/Off
-    usage: /modmode on/off
-  staffcheck:
-    description: Checks All Information
-    usage: /staffcheck
-  chelp:
-    description: DevTCBN Help
-    usage: /chelp
-  cfeed:
-    description: Feeds You
-    usage: /cfeed
-  cfly:
-    description: Lets You Fly
-    usage: /cfly on/off
-  pos:
-    description: Gives Location
-    usage: /pos
-  otherpos:
-    description: Other persons location
-    usage: /otherpos USER
-  wb:
-    description: Workbench
-    usage: /wb
-    aliases: [workbench, cwb, cworkbench]
-  update:
-    description: Warns of Update
-    usage: /<command>
-  tellpos:
-    description: Gives Location To Others
+  cwb:
+    description: Opens virtual Workbench
+    aliases: [cworkbench, workbench, wb]
+    permission: devtcbn.workbench
     usage: /<command>
   cheal:
-    description: Heals you
+    description: Heals you to full health
+    permission: devtcbn.heal
     usage: /<command>
-  gmc:
-    description: Changes Your Gamemode To Creative
+  cfly:
+    description: Toggles your fly
+    permission: devtcbn.fly
+    usage: /<commands> [true/false || toggle]
+  cfeed:
+    description: Feeds you
+    permission: devtcbn.feed
+  test:
+    description: A debug command
+    aliases: [cdebug1]
+    permission: devtcbndebug.debug1
+    usage: NONE
+  inp:
+    description: A command to tell you progress
+    aliases: [inprogress]
+    permission: devtcbn.inp
     usage: /<command>
-  gma:
-    description: Changes Your Gamemode To Adventure
+  update:
+    description: A command to reload all data
+    aliases: [reloaddata]
+    permission: devtcbn.update
     usage: /<command>
-  gms:
-    description: Changes Your Gamemode To Survival
-    usage: /<command>
-  gmsp:
-    description: Changes Your Gamemode To Spectator
-    usage: /<command>
-
+permissions:
+  devtcbn.*:
+    description: Full perms node. Very dangerous to grant
+    default: op
+    children:
+      devtcbn.workbench: true
+      devtcbn.heal: true
+      devtcbn.feed: true
+      devtcbn.fly: true
+      devtcbn.help: true
+      devtcbn.inp: true
+      devtcbn.update: true
+  devtcbndebug.*:
+    description: A debug command, has no function
+    default: false
+    children:
+      devtcbndebug.debug1
+  devtcbn.workbench:
+    description: Permission to use the vWorkbench
+    default: op
+  devtcbn.heal:
+    description: Permission for heal
+    default: op
+  devtcbn.fly:
+    description: Toggle fly
+    default: op
+  devtcbn.feed:
+    description: Feeds you
+    default: op
+  devtcbn.help:
+    description: Prints all available commands into chat
+    default: false
+  devtcbn.inp:
+    description: Prints inprogress commands to chat
+    default: false
+  devtcbn.update:
+    description: Reloads all data unlike restarting all plugins this only forces files to be reloaded
+    default: false
+  devtcbndebug.debug1:
+    description: A debug permission which doesn't work
+    default: false
