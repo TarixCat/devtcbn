@@ -24,13 +24,20 @@ public class Fly implements CommandExecutor {
                         player.sendMessage(ChatColor.GREEN + "Flight Set To True");
                         return true;
                     }
-                    else if(DevTCBNPlugin.flyToggle.contains(player.getUniqueId()) || args[0].equalsIgnoreCase("false") || args[0].equalsIgnoreCase("off")) {
+                    else if(args[0].equalsIgnoreCase("false") || args[0].equalsIgnoreCase("off")) {
                         player.setAllowFlight(false);
                         player.setFlying(false);
                         player.setNoDamageTicks(100);
                         DevTCBNPlugin.flyToggle.remove(player.getUniqueId());
                         player.sendMessage(ChatColor.GREEN + "Flight Set To False");
                         return true;
+                    }
+                    else {
+                        player.setAllowFlight(false);
+                        player.setFlying(false);
+                        player.setNoDamageTicks(100);
+                        DevTCBNPlugin.flyToggle.remove(player.getUniqueId());
+                        player.sendMessage(ChatColor.GREEN + "Flight Set To False");
                     }
             }
             else{

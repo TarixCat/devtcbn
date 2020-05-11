@@ -27,6 +27,7 @@ commands:
     aliases: [cdebug1]
     permission: devtcbndebug.debug1
     usage: NONE
+    permission-message: This command was not intended for anyone but TarixCat's use
   inp:
     description: A command to tell you progress
     aliases: [inprogress]
@@ -36,6 +37,10 @@ commands:
     description: A command to reload all data
     aliases: [reloaddata]
     permission: devtcbn.update
+    usage: /<command>
+  chelp:
+    description: A command that prints help in the chat
+    permission: devtcbn.help
     usage: /<command>
 permissions:
   devtcbn.*:
