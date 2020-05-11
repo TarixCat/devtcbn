@@ -7,7 +7,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class PosGroup implements CommandExecutor {
+public class OldPosGroup implements CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
@@ -48,10 +48,7 @@ public class PosGroup implements CommandExecutor {
             double blockZ = player.getPlayer().getLocation().getBlockZ();
 
             player.sendMessage(ChatColor.GREEN + "Printing Location...");
-            Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Player: " + ChatColor.WHITE + player.getName() + ChatColor.GREEN + " Location X=" + blockX + " Y=" + blockY + " Z=" + blockZ + " DIM=" + player.getLocation().getWorld());
-        }
-
-        else {
+            Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Player: " + ChatColor.WHITE + player.getName() + ChatColor.GREEN + " Location X=" + blockX + " Y=" + blockY + " Z=" + blockZ);
         }
         return true;
     }

@@ -27,7 +27,6 @@ commands:
     aliases: [cdebug1]
     permission: devtcbndebug.debug1
     usage: NONE
-    permission-message: This command was not intended for anyone but TarixCat's use
   inp:
     description: A command to tell you progress
     aliases: [inprogress]
@@ -39,8 +38,23 @@ commands:
     permission: devtcbn.update
     usage: /<command>
   chelp:
-    description: A command that prints help in the chat
+    description: A command that prints this plugins commands in chat
     permission: devtcbn.help
+    usage: /<command>
+  pos:
+    description: Tells you your coordinates in chat
+    aliases: [selfpos, position]
+    permission: devtcbn.selfposition
+    usage: /<command>
+  rpos:
+    description: Uses another persons username to get their position
+    aliases: [otherpos, getrpos, playerpos]
+    permission: devtcbn.otherposition
+    usage: /<command> Username
+  bcpos:
+    description: Broadcasts your position to the server
+    aliases: [broadcastpos, tellpos, bcposition, sendpos]
+    permission: devtcbn.broadcastposition
     usage: /<command>
 permissions:
   devtcbn.*:
@@ -54,11 +68,14 @@ permissions:
       devtcbn.help: true
       devtcbn.inp: true
       devtcbn.update: true
+      devtcbn.selfposition: true
+      devtcbn.otherposition: true
+      devtcbn.broadcastposition: true
   devtcbndebug.*:
     description: A debug command, has no function
-    default: false
+    default: op
     children:
-      devtcbndebug.debug1
+      devtcbndebug.debug1: true
   devtcbn.workbench:
     description: Permission to use the vWorkbench
     default: op
@@ -82,4 +99,13 @@ permissions:
     default: false
   devtcbndebug.debug1:
     description: A debug permission which doesn't work
+    default: false
+  devtcbn.selfposition:
+    description: Prints your position in chat only to you
+    default: false
+  devtcbn.otherposition:
+    description: Prints another persons location in chat
+    default: false
+  devtcbn.broadcastposition:
+    description: Broadcasts your position in chat
     default: false

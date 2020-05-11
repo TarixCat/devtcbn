@@ -1,5 +1,6 @@
 package me.devtarix.devtcbnplugin.Commands.ToolGroup;
 
+import me.devtarix.devtcbnplugin.Vars;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -16,11 +17,11 @@ public class Feed implements CommandExecutor {
                 player.sendMessage(ChatColor.GREEN + "You Have Been Fed");
             }
             else{
-                player.sendMessage("No Permission Given");
+                player.sendMessage(Vars.errColor + Vars.noPerms);
             }
         }
         else{
-            sender.sendMessage("This command cannot be run from console");
+            sender.sendMessage(Vars.errColor + Vars.notPlayer);
         }
         return true;
     }

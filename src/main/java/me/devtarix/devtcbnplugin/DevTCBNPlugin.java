@@ -3,6 +3,9 @@ package me.devtarix.devtcbnplugin;
 import me.devtarix.devtcbnplugin.Commands.MiscGroup.InProgress;
 import me.devtarix.devtcbnplugin.Commands.MiscGroup.PluginUpdate;
 import me.devtarix.devtcbnplugin.Commands.MiscGroup.Test;
+import me.devtarix.devtcbnplugin.Commands.PositionGroup.OtherPositions;
+import me.devtarix.devtcbnplugin.Commands.PositionGroup.Position;
+import me.devtarix.devtcbnplugin.Commands.PositionGroup.PositionBroadcast;
 import me.devtarix.devtcbnplugin.Commands.ToolGroup.*;
 import org.bukkit.ChatColor;
 import org.bukkit.Bukkit;
@@ -33,11 +36,7 @@ public final class DevTCBNPlugin extends JavaPlugin {
     public static void log(Level level, String msg) {
         System.out.println(msg);
     }
-/*
-    double blockX = event.getPlayer().getLocation().getBlockX();
-    double blockY = event.getPlayer().getLocation().getBlockY();
-    double blockZ = event.getPlayer().getLocation().getBlockZ();
-*/
+
     public Permission staffPermission = new Permission("devtcbn.staff");
     public Permission wbPermission = new Permission("devtcbn.workbench");
     public Permission healPermission = new Permission("devtcbn.heal");
@@ -62,6 +61,9 @@ public final class DevTCBNPlugin extends JavaPlugin {
         this.getCommand("test").setExecutor(new Test());
         this.getCommand("inp").setExecutor(new InProgress());
         this.getCommand("update").setExecutor(new PluginUpdate());
+        this.getCommand("pos").setExecutor(new Position());
+        this.getCommand("rpos").setExecutor(new OtherPositions());
+        this.getCommand("bcpos").setExecutor(new PositionBroadcast());
     }
 
     @Override

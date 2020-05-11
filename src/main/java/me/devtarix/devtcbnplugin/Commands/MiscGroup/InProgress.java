@@ -1,6 +1,5 @@
 package me.devtarix.devtcbnplugin.Commands.MiscGroup;
 
-import me.devtarix.devtcbnplugin.DevTCBNPlugin;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -14,7 +13,7 @@ import java.util.ArrayList;
 
 public class InProgress implements CommandExecutor {
     String n1 = "\n";
-    private String test = "Currently In-Progress: bed, setbed, advanced adminmode, opme, enforcer commands";
+    private final String test = "Currently In-Progress: bed, setbed, advanced adminmode, opme, enforcer commands";
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if(sender instanceof Player) {

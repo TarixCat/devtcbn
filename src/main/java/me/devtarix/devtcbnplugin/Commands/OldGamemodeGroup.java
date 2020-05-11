@@ -7,7 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class GamemodeGroup implements CommandExecutor {
+public class OldGamemodeGroup implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
         if(cmd.getName().equalsIgnoreCase("gmc") && sender instanceof Player) {
