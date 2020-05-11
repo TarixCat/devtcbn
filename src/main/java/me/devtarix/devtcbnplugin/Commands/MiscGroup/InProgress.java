@@ -1,5 +1,6 @@
 package me.devtarix.devtcbnplugin.Commands.MiscGroup;
 
+import me.devtarix.devtcbnplugin.Vars;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -37,11 +38,11 @@ public class InProgress implements CommandExecutor {
                 player.openBook(UpdateBook);
             }
             else {
-                player.sendMessage("No Permission Given");
+                player.sendMessage(Vars.errColor + Vars.noPerms);
             }
         }
         else{
-            System.out.println("Please run command In-Game. Thanks!");
+            sender.sendMessage(Vars.errColor + Vars.notPlayer);
         }
         return true;
     }

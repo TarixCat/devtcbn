@@ -1,6 +1,7 @@
 package me.devtarix.devtcbnplugin.Commands.ToolGroup;
 
 import me.devtarix.devtcbnplugin.DevTCBNPlugin;
+import me.devtarix.devtcbnplugin.Vars;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -30,11 +31,11 @@ public class Fly implements CommandExecutor {
                     }
             }
             else{
-                player.sendMessage("No Permission Given");
+                player.sendMessage(Vars.errColor + Vars.noPerms);
             }
         }
         else{
-            sender.sendMessage("This command cannot be run from console, for obvious reasons...");
+            sender.sendMessage(Vars.errColor + Vars.notPlayer);
         }
         return true;
     }

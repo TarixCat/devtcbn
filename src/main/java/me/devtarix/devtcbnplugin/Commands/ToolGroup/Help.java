@@ -1,5 +1,6 @@
 package me.devtarix.devtcbnplugin.Commands.ToolGroup;
 
+import me.devtarix.devtcbnplugin.Vars;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -31,11 +32,11 @@ public class Help implements CommandExecutor {
                 player.sendMessage(ChatColor.GOLD + "------------------");
             }
             else {
-                player.sendMessage("No Permission Given");
+                player.sendMessage(Vars.errColor + Vars.noPerms);
             }
         }
         else {
-            System.out.println("No current commands for Console.");
+            sender.sendMessage(Vars.errColor + Vars.notPlayer);
         }
         return true;
     }
