@@ -12,9 +12,9 @@ TheCatBoxNetwork's Lead-Owner, Head Of Staff, And Developers Random Bits Of Code
 Default branch and current version is master branch,
 Currently Working On is update branch
 
-> Current Version: v0.3.1_release
+> Current Version: v0.3.1
 
-> Currently Working On: v0.3.4_alpha
+> Currently Working On: v0.3.4
 
 **ALL ALPHA VERSIONS ARE SUBJECT TO REVISION**
 
