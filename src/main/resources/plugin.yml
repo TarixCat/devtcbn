@@ -73,6 +73,20 @@ commands:
     description: Adventure
     permission: devtcbn.gamemode.adventure
     usage: /<command>
+  staffcheck:
+    description: A command to check staff variables currently set
+    permission: devtbcn.staff.staffcheck
+    usage: /<command>
+  modmode:
+    description: Modmode
+    aliases: [mmode]
+    permission: devtcbn.staff.modmode
+    usage: /<command>
+  adminmode:
+    description: AdminMode
+    aliases: [amode, admmode]
+    permission: devtcbn.staff.adminmode
+    usage: /<command>
 permissions:
   devtcbn.*:
     description: Full perms node. Very dangerous to grant
@@ -146,4 +160,20 @@ permissions:
     default: op
   devtcbn.gamemode.adventure:
     description: Adventure
+    default: op
+  devtcbn.staff.*:
+    description: Staff All Perm Node
+    default: op
+    children:
+      devtcbn.staff.staffcheck: true
+      devtbcn.staff.modmode: true
+      devtcbn.staff.adminmode: true
+  devtcbn.staff.staffcheck:
+    description: Staff check perms
+    default: op
+  devtcbn.staff.modmode:
+    description: Modmode
+    default: op
+  devtcbn.staff.adminmode:
+    description: AdminMode
     default: op
