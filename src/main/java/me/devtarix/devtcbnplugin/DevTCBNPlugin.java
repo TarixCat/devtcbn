@@ -1,5 +1,9 @@
 package me.devtarix.devtcbnplugin;
 
+import me.devtarix.devtcbnplugin.Commands.GamemodeGroup.AdventureCMD;
+import me.devtarix.devtcbnplugin.Commands.GamemodeGroup.CreativeCMD;
+import me.devtarix.devtcbnplugin.Commands.GamemodeGroup.SpectatorCMD;
+import me.devtarix.devtcbnplugin.Commands.GamemodeGroup.SurvivalCMD;
 import me.devtarix.devtcbnplugin.Commands.MiscGroup.InProgress;
 import me.devtarix.devtcbnplugin.Commands.MiscGroup.PluginUpdate;
 import me.devtarix.devtcbnplugin.Commands.MiscGroup.Test;
@@ -64,6 +68,10 @@ public final class DevTCBNPlugin extends JavaPlugin {
         this.getCommand("pos").setExecutor(new Position());
         this.getCommand("rpos").setExecutor(new OtherPositions());
         this.getCommand("bcpos").setExecutor(new PositionBroadcast());
+        this.getCommand("gmc").setExecutor(new CreativeCMD());
+        this.getCommand("gms").setExecutor(new SurvivalCMD());
+        this.getCommand("gmsp").setExecutor(new SpectatorCMD());
+        this.getCommand("gma").setExecutor(new AdventureCMD());
     }
 
     @Override

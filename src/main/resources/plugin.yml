@@ -3,7 +3,8 @@ version: @version@
 main: me.devtarix.devtcbnplugin.DevTCBNPlugin
 api-version: 1.14
 prefix: DevTCBNPlugin
-authors: [TarixCat, DevTarix, DevTCBN, TCBN, TheCatBoxNetwork, TCBNDevelopment]
+authors: [TarixCat, DevTarix, DevTCBN, TheCatBoxNetwork, TCBNDevelopment]
+website: http://hs.devtcbn.ml
 description: A sandbox plugin for Everyone's use
 commands:
   cwb:
@@ -56,6 +57,22 @@ commands:
     aliases: [broadcastpos, tellpos, bcposition, sendpos]
     permission: devtcbn.broadcastposition
     usage: /<command>
+  gmc:
+    description: Creative
+    permission: devtcbn.gamemode.creative
+    usage: /<command>
+  gms:
+    description: Survival
+    permission: devtcbn.gamemode.survival
+    usage: /<command>
+  gmsp:
+    description: Spectator
+    permission: devtcbn.gamemode.spectator
+    usage: /<command>
+  gma:
+    description: Adventure
+    permission: devtcbn.gamemode.adventure
+    usage: /<command>
 permissions:
   devtcbn.*:
     description: Full perms node. Very dangerous to grant
@@ -71,6 +88,7 @@ permissions:
       devtcbn.selfposition: true
       devtcbn.otherposition: true
       devtcbn.broadcastposition: true
+      devtcbn.gamemode.*: true
   devtcbndebug.*:
     description: A debug command, has no function
     default: op
@@ -109,3 +127,23 @@ permissions:
   devtcbn.broadcastposition:
     description: Broadcasts your position in chat
     default: false
+  devtcbn.gamemode.*:
+    description: Gamemode Group
+    default: op
+    children:
+      devtcbn.gamemode.creative: true
+      devtcbn.gamemode.adventure: true
+      devtcbn.gamemode.survival: true
+      devtcbn.gamemode.spectator: true
+  devtcbn.gamemode.creative:
+    description: Creative
+    default: op
+  devtcbn.gamemode.survival:
+    description: Survival
+    default: op
+  devtcbn.gamemode.spectator:
+    description: Spectator
+    default: op
+  devtcbn.gamemode.adventure:
+    description: Adventure
+    default: op
