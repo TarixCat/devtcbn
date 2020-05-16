@@ -1,65 +1,179 @@
 name: DevTCBNPlugin
 version: @version@
 main: me.devtarix.devtcbnplugin.DevTCBNPlugin
-api-version: 1.15
+api-version: 1.14
 prefix: DevTCBNPlugin
-authors: [TarixCat, DevTarix, DevTCBN, TCBN, TheCatBoxNetwork, TCBNDevelopment]
+authors: [TarixCat, DevTarix, DevTCBN, TheCatBoxNetwork, TCBNDevelopment]
+website: http://hs.devtcbn.ml
 description: A sandbox plugin for Everyone's use
 commands:
-  test:
-    description: Checks For Errors
-    usage: /test
-  inp:
-    description: INPROGRESS
-    usage: /inp
-  adminmode:
-    description: Admin Mode On/Off
-    usage: /adminmode on/off
-  modmode:
-    description: Mod Mode On/Off
-    usage: /modmode on/off
-  staffcheck:
-    description: Checks All Information
-    usage: /staffcheck
-  chelp:
-    description: DevTCBN Help
-    usage: /chelp
-  cfeed:
-    description: Feeds You
-    usage: /cfeed
-  cfly:
-    description: Lets You Fly
-    usage: /cfly on/off
-  pos:
-    description: Gives Location
-    usage: /pos
-  otherpos:
-    description: Other persons location
-    usage: /otherpos USER
-  wb:
-    description: Workbench
-    usage: /wb
-    aliases: [workbench, cwb, cworkbench]
-  update:
-    description: Warns of Update
-    usage: /<command>
-  tellpos:
-    description: Gives Location To Others
+  cwb:
+    description: Opens virtual Workbench
+    aliases: [cworkbench, workbench, wb]
+    permission: devtcbn.workbench
     usage: /<command>
   cheal:
-    description: Heals you
+    description: Heals you to full health
+    permission: devtcbn.heal
+    usage: /<command>
+  cfly:
+    description: Toggles your fly
+    permission: devtcbn.fly
+    usage: /<commands> [true/false || toggle]
+  cfeed:
+    description: Feeds you
+    permission: devtcbn.feed
+  test:
+    description: A debug command
+    aliases: [cdebug1]
+    permission: devtcbndebug.debug1
+    usage: NONE
+  inp:
+    description: A command to tell you progress
+    aliases: [inprogress]
+    permission: devtcbn.inp
+    usage: /<command>
+  update:
+    description: A command to reload all data
+    aliases: [reloaddata]
+    permission: devtcbn.update
+    usage: /<command>
+  chelp:
+    description: A command that prints this plugins commands in chat
+    permission: devtcbn.help
+    usage: /<command>
+  pos:
+    description: Tells you your coordinates in chat
+    aliases: [selfpos, position]
+    permission: devtcbn.selfposition
+    usage: /<command>
+  rpos:
+    description: Uses another persons username to get their position
+    aliases: [otherpos, getrpos, playerpos]
+    permission: devtcbn.otherposition
+    usage: /<command> Username
+  bcpos:
+    description: Broadcasts your position to the server
+    aliases: [broadcastpos, tellpos, bcposition, sendpos]
+    permission: devtcbn.broadcastposition
     usage: /<command>
   gmc:
-    description: Changes Your Gamemode To Creative
-    usage: /<command>
-  gma:
-    description: Changes Your Gamemode To Adventure
+    description: Creative
+    permission: devtcbn.gamemode.creative
     usage: /<command>
   gms:
-    description: Changes Your Gamemode To Survival
+    description: Survival
+    permission: devtcbn.gamemode.survival
     usage: /<command>
   gmsp:
-    description: Changes Your Gamemode To Spectator
+    description: Spectator
+    permission: devtcbn.gamemode.spectator
+    usage: /<command>
+  gma:
+    description: Adventure
+    permission: devtcbn.gamemode.adventure
+    usage: /<command>
+  staffcheck:
+    description: A command to check staff variables currently set
+    permission: devtbcn.staff.staffcheck
+    usage: /<command>
+  modmode:
+    description: Modmode
+    aliases: [mmode]
+    permission: devtcbn.staff.modmode
+    usage: /<command>
+  adminmode:
+    description: AdminMode
+    aliases: [amode, admmode]
+    permission: devtcbn.staff.adminmode
     usage: /<command>
 permissions:
-
+  devtcbn.*:
+    description: Full perms node. Very dangerous to grant
+    default: op
+    children:
+      devtcbn.workbench: true
+      devtcbn.heal: true
+      devtcbn.feed: true
+      devtcbn.fly: true
+      devtcbn.help: true
+      devtcbn.inp: true
+      devtcbn.update: true
+      devtcbn.selfposition: true
+      devtcbn.otherposition: true
+      devtcbn.broadcastposition: true
+      devtcbn.gamemode.*: true
+  devtcbndebug.*:
+    description: A debug command, has no function
+    default: op
+    children:
+      devtcbndebug.debug1: true
+  devtcbn.workbench:
+    description: Permission to use the vWorkbench
+    default: op
+  devtcbn.heal:
+    description: Permission for heal
+    default: op
+  devtcbn.fly:
+    description: Toggle fly
+    default: op
+  devtcbn.feed:
+    description: Feeds you
+    default: op
+  devtcbn.help:
+    description: Prints all available commands into chat
+    default: false
+  devtcbn.inp:
+    description: Prints inprogress commands to chat
+    default: false
+  devtcbn.update:
+    description: Reloads all data unlike restarting all plugins this only forces files to be reloaded
+    default: false
+  devtcbndebug.debug1:
+    description: A debug permission which doesn't work
+    default: false
+  devtcbn.selfposition:
+    description: Prints your position in chat only to you
+    default: false
+  devtcbn.otherposition:
+    description: Prints another persons location in chat
+    default: false
+  devtcbn.broadcastposition:
+    description: Broadcasts your position in chat
+    default: false
+  devtcbn.gamemode.*:
+    description: Gamemode Group
+    default: op
+    children:
+      devtcbn.gamemode.creative: true
+      devtcbn.gamemode.adventure: true
+      devtcbn.gamemode.survival: true
+      devtcbn.gamemode.spectator: true
+  devtcbn.gamemode.creative:
+    description: Creative
+    default: op
+  devtcbn.gamemode.survival:
+    description: Survival
+    default: op
+  devtcbn.gamemode.spectator:
+    description: Spectator
+    default: op
+  devtcbn.gamemode.adventure:
+    description: Adventure
+    default: op
+  devtcbn.staff.*:
+    description: Staff All Perm Node
+    default: op
+    children:
+      devtcbn.staff.staffcheck: true
+      devtbcn.staff.modmode: true
+      devtcbn.staff.adminmode: true
+  devtcbn.staff.staffcheck:
+    description: Staff check perms
+    default: op
+  devtcbn.staff.modmode:
+    description: Modmode
+    default: op
+  devtcbn.staff.adminmode:
+    description: AdminMode
+    default: op
