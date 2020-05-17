@@ -1,6 +1,5 @@
 package me.devtarix.devtcbnplugin.Commands.StaffToolsGroup;
 
-import me.devtarix.devtcbnplugin.DevTCBNPlugin;
 import me.devtarix.devtcbnplugin.Storage;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
