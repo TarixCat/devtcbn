@@ -1,6 +1,6 @@
 package me.devtarix.devtcbnplugin.Commands.MiscGroup;
 
-import me.devtarix.devtcbnplugin.Storage;
+import me.devtarix.devtcbnplugin.Util.Storage;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;

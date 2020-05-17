@@ -1,6 +1,6 @@
 package me.devtarix.devtcbnplugin.Commands.ToolGroup;
 
-import me.devtarix.devtcbnplugin.Storage;
+import me.devtarix.devtcbnplugin.Util.Storage;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

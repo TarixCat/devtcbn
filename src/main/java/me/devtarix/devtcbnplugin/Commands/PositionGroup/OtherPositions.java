@@ -1,6 +1,6 @@
 package me.devtarix.devtcbnplugin.Commands.PositionGroup;
 
-import me.devtarix.devtcbnplugin.Storage;
+import me.devtarix.devtcbnplugin.Util.Storage;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;

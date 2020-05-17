@@ -1,5 +1,6 @@
 package me.devtarix.devtcbnplugin;
 
+import me.devtarix.devtcbnplugin.Util.Storage;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
