@@ -6,6 +6,7 @@ import me.devtarix.devtcbnplugin.Commands.GamemodeGroup.SpectatorCMD;
 import me.devtarix.devtcbnplugin.Commands.GamemodeGroup.SurvivalCMD;
 import me.devtarix.devtcbnplugin.Commands.MiscGroup.InProgress;
 import me.devtarix.devtcbnplugin.Commands.MiscGroup.PluginUpdate;
+import me.devtarix.devtcbnplugin.Commands.MiscGroup.SkeletonFind;
 import me.devtarix.devtcbnplugin.Commands.MiscGroup.Test;
 import me.devtarix.devtcbnplugin.Commands.PositionGroup.OtherPositions;
 import me.devtarix.devtcbnplugin.Commands.PositionGroup.Position;
@@ -67,6 +68,7 @@ public final class DevTCBNPlugin extends JavaPlugin {
         this.getCommand("staffcheck").setExecutor(new StaffCheck());
         this.getCommand("modmode").setExecutor(new ModMode());
         this.getCommand("adminmode").setExecutor(new AdminMode());
+        this.getCommand("skelespawn").setExecutor(new SkeletonFind());
     }
 
     @Override

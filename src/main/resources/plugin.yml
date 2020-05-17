@@ -87,6 +87,11 @@ commands:
     aliases: [amode, admmode]
     permission: devtcbn.staff.adminmode
     usage: /<command>
+  skelespawn:
+    description: Set Skeleton Spawning
+    aliases: [skspawn, skeletoggle, skset, skeleset]
+    permission: devtcbn.skeletontoggle
+    usage: /<command>
 permissions:
   devtcbn.*:
     description: Full perms node. Very dangerous to grant
@@ -102,6 +107,7 @@ permissions:
       devtcbn.selfposition: true
       devtcbn.otherposition: true
       devtcbn.broadcastposition: true
+      devtcbn.skeletontoggle: true
       devtcbn.gamemode.*: true
   devtcbndebug.*:
     description: A debug command, has no function
@@ -176,4 +182,7 @@ permissions:
     default: op
   devtcbn.staff.adminmode:
     description: AdminMode
+    default: op
+  devtcbn.skeletontoggle:
+    description: Skeleton Toggle Node
     default: op
