@@ -1,5 +1,6 @@
 package me.devtarix.devtcbnplugin.Commands.MiscGroup;
 
+import me.devtarix.devtcbnplugin.Util.ChatMsg;
 import me.devtarix.devtcbnplugin.Util.Storage;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -18,7 +19,7 @@ public class PluginInfo implements CommandExecutor {
                         return true;
                     }
                     else if(args[0].equalsIgnoreCase("version") || args[0].equalsIgnoreCase("ver")) {
-                        player.sendMessage(Storage.verColor + Storage.verString);
+                        player.sendMessage(ChatMsg.VERSION.toString());
                         return true;
                     }
                     else if(args[0].equalsIgnoreCase("credit")) {
