@@ -1,17 +1,15 @@
 package me.devtarix.devtcbnplugin.Util;
 
-import org.bukkit.ChatColor;
-
-public enum ErrMsg {
+public enum ChatMsg {
     NOPERMS(Storage.errColor + Storage.noPerms),
     NOARGS(Storage.errColor + Storage.noArgs),
     NOTPLAYER(Storage.errColor + Storage.notPlayer),
     WRONGARGS(Storage.errColor + Storage.wrongArgs),
     VERSION(Storage.verColor + Storage.verString);
 
-    private final String errMsg;
+    private final String ChatMsg;
 
-    ErrMsg(String errMsg) {
-        this.errMsg = errMsg;
+    ChatMsg(String ChatMsg) {
+        this.ChatMsg = ChatMsg;
     }
 }
