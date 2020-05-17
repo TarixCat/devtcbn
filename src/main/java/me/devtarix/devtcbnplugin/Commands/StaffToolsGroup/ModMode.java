@@ -1,7 +1,7 @@
 package me.devtarix.devtcbnplugin.Commands.StaffToolsGroup;
 
 import me.devtarix.devtcbnplugin.DevTCBNPlugin;
-import me.devtarix.devtcbnplugin.Vars;
+import me.devtarix.devtcbnplugin.Storage;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
@@ -14,27 +14,27 @@ public class ModMode implements CommandExecutor {
         if(sender instanceof Player) {
             Player player = (Player) sender;
             if (player.hasPermission("devtcbn.staff.modmode") || player.isOp()) {
-                if(!DevTCBNPlugin.modModeToggle.contains(player.getUniqueId())) {
+                if(!Storage.modModeToggle.contains(player.getUniqueId())) {
                     player.setCanPickupItems(false);
                     player.setGameMode(GameMode.SPECTATOR);
                     player.setNoDamageTicks(99999999);
-                    DevTCBNPlugin.modModeToggle.add(player.getUniqueId());
+                    Storage.modModeToggle.add(player.getUniqueId());
                     player.sendMessage(ChatColor.GREEN + "Toggled Modmode ON");
                 }
                 else {
                     player.setCanPickupItems(true);
                     player.setGameMode(GameMode.SURVIVAL);
                     player.setNoDamageTicks(200);
-                    DevTCBNPlugin.modModeToggle.remove(player.getUniqueId());
+                    Storage.modModeToggle.remove(player.getUniqueId());
                     player.sendMessage(ChatColor.GREEN + "Toggled Modmode OFF");
                 }
             }
             else {
-                player.sendMessage(Vars.errColor + Vars.noPerms);
+                player.sendMessage(Storage.errColor + Storage.noPerms);
             }
         }
         else {
-            sender.sendMessage(Vars.errColor + Vars.noPerms);
+            sender.sendMessage(Storage.errColor + Storage.noPerms);
         }
         return true;
     }

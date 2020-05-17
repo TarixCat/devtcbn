@@ -1,6 +1,6 @@
 package me.devtarix.devtcbnplugin.Commands.ToolGroup;
 
-import me.devtarix.devtcbnplugin.Vars;
+import me.devtarix.devtcbnplugin.Storage;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -14,11 +14,11 @@ public class WorkBench implements CommandExecutor {
                 player.openWorkbench(null, true);
             }
             else {
-                player.sendMessage(Vars.errColor + Vars.noPerms);
+                player.sendMessage(Storage.errColor + Storage.noPerms);
             }
         }
         else{
-            sender.sendMessage(Vars.errColor + Vars.notPlayer);
+            sender.sendMessage(Storage.errColor + Storage.notPlayer);
         }
         return true;
     }

@@ -1,6 +1,6 @@
 package me.devtarix.devtcbnplugin.Commands.PositionGroup;
 
-import me.devtarix.devtcbnplugin.Vars;
+import me.devtarix.devtcbnplugin.Storage;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -28,7 +28,7 @@ public class OtherPositions implements CommandExecutor {
                 player.sendMessage(ChatColor.GREEN + "Location X=" + TblockX + " Y=" + TblockY + " Z=" + TblockZ);
             }
             else {
-                player.sendMessage(ChatColor.RED + Vars.noPerms);
+                player.sendMessage(ChatColor.RED + Storage.noPerms);
             }
         }
         else {

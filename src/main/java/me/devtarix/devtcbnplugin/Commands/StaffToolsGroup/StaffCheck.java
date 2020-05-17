@@ -1,6 +1,6 @@
 package me.devtarix.devtcbnplugin.Commands.StaffToolsGroup;
 
-import me.devtarix.devtcbnplugin.Vars;
+import me.devtarix.devtcbnplugin.Storage;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -22,11 +22,11 @@ public class StaffCheck implements CommandExecutor {
                 player.sendMessage("Operators: " + Bukkit.getOperators());
             }
             else {
-                player.sendMessage(Vars.errColor + Vars.noPerms);
+                player.sendMessage(Storage.errColor + Storage.noPerms);
             }
         }
         else {
-            sender.sendMessage(Vars.errColor + Vars.noPerms);
+            sender.sendMessage(Storage.errColor + Storage.noPerms);
         }
         return true;
     }

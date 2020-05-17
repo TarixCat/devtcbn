@@ -1,7 +1,7 @@
 package me.devtarix.devtcbnplugin.Commands.StaffToolsGroup;
 
 import me.devtarix.devtcbnplugin.DevTCBNPlugin;
-import me.devtarix.devtcbnplugin.Vars;
+import me.devtarix.devtcbnplugin.Storage;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -13,12 +13,12 @@ public class AdminMode implements CommandExecutor {
         if(sender instanceof Player) {
             Player player = (Player) sender;
             if (player.hasPermission("devtcbn.staff.adminmode") || player.isOp()) {
-                if(!DevTCBNPlugin.adminModeToggle.contains(player.getUniqueId())) {
+                if(!Storage.adminModeToggle.contains(player.getUniqueId())) {
                     player.setCanPickupItems(false);
                     player.setAllowFlight(true);
                     player.setFlying(true);
                     player.setNoDamageTicks(99999999);
-                    DevTCBNPlugin.adminModeToggle.add(player.getUniqueId());
+                    Storage.adminModeToggle.add(player.getUniqueId());
                     player.sendMessage(ChatColor.GREEN + "Adminmode Toggled ON");
                 }
                 else {
@@ -26,16 +26,16 @@ public class AdminMode implements CommandExecutor {
                     player.setAllowFlight(false);
                     player.setFlying(false);
                     player.setNoDamageTicks(2000);
-                    DevTCBNPlugin.adminModeToggle.remove(player.getUniqueId());
+                    Storage.adminModeToggle.remove(player.getUniqueId());
                     player.sendMessage(ChatColor.GREEN + "Adminmode Toggled OFF");
                 }
             }
             else {
-                player.sendMessage(Vars.errColor + Vars.noPerms);
+                player.sendMessage(Storage.errColor + Storage.noPerms);
             }
         }
         else {
-            sender.sendMessage(Vars.errColor + Vars.noPerms);
+            sender.sendMessage(Storage.errColor + Storage.noPerms);
         }
         return true;
     }

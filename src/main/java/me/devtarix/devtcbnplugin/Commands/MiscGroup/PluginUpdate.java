@@ -1,6 +1,6 @@
 package me.devtarix.devtcbnplugin.Commands.MiscGroup;
 
-import me.devtarix.devtcbnplugin.Vars;
+import me.devtarix.devtcbnplugin.Storage;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -18,7 +18,7 @@ public class PluginUpdate implements CommandExecutor {
                 player.getServer().broadcastMessage(ChatColor.RED + "Reloaded Data...");
             }
             else {
-                player.sendMessage(Vars.errColor + Vars.noPerms);
+                player.sendMessage(Storage.errColor + Storage.noPerms);
             }
         }
         else {

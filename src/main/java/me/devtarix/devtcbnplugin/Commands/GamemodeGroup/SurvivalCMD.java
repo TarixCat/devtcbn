@@ -1,6 +1,6 @@
 package me.devtarix.devtcbnplugin.Commands.GamemodeGroup;
 
-import me.devtarix.devtcbnplugin.Vars;
+import me.devtarix.devtcbnplugin.Storage;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
@@ -17,11 +17,11 @@ public class SurvivalCMD implements CommandExecutor {
                 player.sendMessage(ChatColor.GREEN + "Gamemode set to Survival");
             }
             else {
-                sender.sendMessage(Vars.errColor + Vars.noPerms);
+                sender.sendMessage(Storage.errColor + Storage.noPerms);
             }
         }
         else {
-            sender.sendMessage(Vars.errColor + Vars.notPlayer);
+            sender.sendMessage(Storage.errColor + Storage.notPlayer);
         }
         return true;
     }
