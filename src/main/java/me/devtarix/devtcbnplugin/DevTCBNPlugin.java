@@ -27,10 +27,6 @@ import java.util.logging.Level;
 
 public final class DevTCBNPlugin extends JavaPlugin {
 
-    public static List<UUID> flyToggle = new ArrayList<UUID>();
-    public static List<UUID> modModeToggle = new ArrayList<UUID>();
-    public static List<UUID> adminModeToggle = new ArrayList<UUID>();
-
     public static void sendMessage(Player p, String msg) {
         p.sendMessage(ChatColor.translateAlternateColorCodes('&', msg));
     }
