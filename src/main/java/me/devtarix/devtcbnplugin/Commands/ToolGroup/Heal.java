@@ -1,6 +1,6 @@
 package me.devtarix.devtcbnplugin.Commands.ToolGroup;
 
-import me.devtarix.devtcbnplugin.Util.Storage;
+import me.devtarix.devtcbnplugin.Util.Inf;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -19,11 +19,11 @@ public class Heal implements CommandExecutor {
                 player.sendMessage(ChatColor.GREEN + "You have been healed!");
             }
             else{
-                player.sendMessage(Storage.errColor + Storage.noPerms);
+                player.sendMessage(Inf.errColor + Inf.noPerms);
             }
         }
         else{
-            sender.sendMessage(Storage.errColor + Storage.notPlayer);
+            sender.sendMessage(Inf.errColor + Inf.notPlayer);
         }
         return true;
     }

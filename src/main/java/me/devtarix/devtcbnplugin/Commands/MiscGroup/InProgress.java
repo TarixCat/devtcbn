@@ -1,6 +1,6 @@
 package me.devtarix.devtcbnplugin.Commands.MiscGroup;
 
-import me.devtarix.devtcbnplugin.Util.Storage;
+import me.devtarix.devtcbnplugin.Util.Inf;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -21,28 +21,14 @@ public class InProgress implements CommandExecutor {
             Player player = (Player) sender;
 
             if(player.hasPermission("devtcbn.futureupdate") || player.isOp()) {
-                player.sendMessage(ChatColor.DARK_RED + "Info Book Opened");
                 player.sendMessage(ChatColor.GOLD + test);
-
-                ItemStack UpdateBook = new ItemStack(Material.WRITTEN_BOOK);
-
-                BookMeta bookMeta = (BookMeta) UpdateBook.getItemMeta();
-                bookMeta.setAuthor("DevTCBN");
-                bookMeta.setTitle("Updates!");
-
-                ArrayList<String> pages = new ArrayList<String>();
-
-                pages.add("Note: Major Rewrites Currently Occuring." + n1 + "Currently In-Progress:" + n1 + "adminmode, modmode, fly. Fixing toggles.");
-
-
-                player.openBook(UpdateBook);
             }
             else {
-                player.sendMessage(Storage.errColor + Storage.noPerms);
+                player.sendMessage(Inf.errColor + Inf.noPerms);
             }
         }
         else{
-            sender.sendMessage(Storage.errColor + Storage.notPlayer);
+            sender.sendMessage(Inf.errColor + Inf.notPlayer);
         }
         return true;
     }

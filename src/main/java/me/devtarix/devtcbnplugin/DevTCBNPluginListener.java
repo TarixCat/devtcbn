@@ -1,6 +1,6 @@
 package me.devtarix.devtcbnplugin;
 
-import me.devtarix.devtcbnplugin.Util.Storage;
+import me.devtarix.devtcbnplugin.Util.Inf;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
@@ -25,7 +25,7 @@ public class DevTCBNPluginListener implements Listener {
     @EventHandler
     public void onSkeltonSpawn(EntitySpawnEvent entityEvent) {
         if(entityEvent.getEntityType() == EntityType.SKELETON) {
-            if(Storage.FSenabled == false) {
+            if(Inf.FSenabled == false) {
                 entityEvent.setCancelled(true);
             }
             else {

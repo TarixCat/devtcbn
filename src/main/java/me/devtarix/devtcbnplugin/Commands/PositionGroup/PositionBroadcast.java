@@ -1,6 +1,6 @@
 package me.devtarix.devtcbnplugin.Commands.PositionGroup;
 
-import me.devtarix.devtcbnplugin.Util.Storage;
+import me.devtarix.devtcbnplugin.Util.Inf;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -21,11 +21,11 @@ public class PositionBroadcast implements CommandExecutor {
                 Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Player: " + ChatColor.WHITE + player.getName() + ChatColor.GREEN + " Location X=" + blockX + " Y=" + blockY + " Z=" + blockZ);
             }
             else {
-                player.sendMessage(Storage.errColor + Storage.noPerms);
+                player.sendMessage(Inf.errColor + Inf.noPerms);
             }
         }
         else {
-            sender.sendMessage(Storage.errColor + Storage.notPlayer);
+            sender.sendMessage(Inf.errColor + Inf.notPlayer);
         }
         return true;
     }

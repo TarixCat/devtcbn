@@ -1,7 +1,7 @@
 package me.devtarix.devtcbnplugin.Commands.MiscGroup;
 
 import me.devtarix.devtcbnplugin.DevTCBNPlugin;
-import me.devtarix.devtcbnplugin.Util.Storage;
+import me.devtarix.devtcbnplugin.Util.Inf;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -18,11 +18,11 @@ public class Test implements CommandExecutor {
                 sender.sendMessage("Testing Direct Chat");
                 DevTCBNPlugin.log(Level.INFO, "Testing Logging");
             } else {
-                sender.sendMessage(Storage.errColor + Storage.noPerms);
+                sender.sendMessage(Inf.errColor + Inf.noPerms);
             }
         }
         else {
-            sender.sendMessage(Storage.errColor + Storage.notPlayer);
+            sender.sendMessage(Inf.errColor + Inf.notPlayer);
         }
         return true;
     }

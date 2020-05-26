@@ -1,6 +1,6 @@
 package me.devtarix.devtcbnplugin.Commands.GamemodeGroup;
 
-import me.devtarix.devtcbnplugin.Util.Storage;
+import me.devtarix.devtcbnplugin.Util.Inf;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
@@ -17,11 +17,11 @@ public class SpectatorCMD implements CommandExecutor {
                 player.sendMessage(ChatColor.GREEN + "Gamemode set to Spectator");
             }
             else {
-                sender.sendMessage(Storage.errColor + Storage.noPerms);
+                sender.sendMessage(Inf.errColor + Inf.noPerms);
             }
         }
         else {
-            sender.sendMessage(Storage.errColor + Storage.notPlayer);
+            sender.sendMessage(Inf.errColor + Inf.notPlayer);
         }
         return true;
     }

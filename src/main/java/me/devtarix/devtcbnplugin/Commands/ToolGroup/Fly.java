@@ -1,6 +1,6 @@
 package me.devtarix.devtcbnplugin.Commands.ToolGroup;
 
-import me.devtarix.devtcbnplugin.Util.Storage;
+import me.devtarix.devtcbnplugin.Util.Inf;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -14,10 +14,10 @@ public class Fly implements CommandExecutor {
             Player player = (Player) sender;
 
             if(player.hasPermission("devtcbn.fly") || player.getName().equals("TarixCat") || player.hasPermission("devtcbn.staff")) {
-                    if(!Storage.flyToggle.contains(player.getUniqueId())) {
+                    if(!Inf.flyToggle.contains(player.getUniqueId())) {
                         player.setAllowFlight(true);
                         player.setFlying(true);
-                        Storage.flyToggle.add(player.getUniqueId());
+                        Inf.flyToggle.add(player.getUniqueId());
                         player.sendMessage(ChatColor.GREEN + "Flight Set To True");
                         return true;
                     }
@@ -25,16 +25,16 @@ public class Fly implements CommandExecutor {
                         player.setAllowFlight(false);
                         player.setFlying(false);
                         player.setNoDamageTicks(100);
-                        Storage.flyToggle.remove(player.getUniqueId());
+                        Inf.flyToggle.remove(player.getUniqueId());
                         player.sendMessage(ChatColor.GREEN + "Flight Set To False");
                     }
             }
             else{
-                player.sendMessage(Storage.errColor + Storage.noPerms);
+                player.sendMessage(Inf.errColor + Inf.noPerms);
             }
         }
         else{
-            sender.sendMessage(Storage.errColor + Storage.notPlayer);
+            sender.sendMessage(Inf.errColor + Inf.notPlayer);
         }
         return true;
     }

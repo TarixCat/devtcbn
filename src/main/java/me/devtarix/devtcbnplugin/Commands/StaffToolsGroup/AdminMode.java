@@ -1,6 +1,6 @@
 package me.devtarix.devtcbnplugin.Commands.StaffToolsGroup;
 
-import me.devtarix.devtcbnplugin.Util.Storage;
+import me.devtarix.devtcbnplugin.Util.Inf;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -12,12 +12,12 @@ public class AdminMode implements CommandExecutor {
         if(sender instanceof Player) {
             Player player = (Player) sender;
             if (player.hasPermission("devtcbn.staff.adminmode") || player.isOp()) {
-                if(!Storage.adminModeToggle.contains(player.getUniqueId())) {
+                if(!Inf.adminModeToggle.contains(player.getUniqueId())) {
                     player.setCanPickupItems(false);
                     player.setAllowFlight(true);
                     player.setFlying(true);
                     player.setNoDamageTicks(99999999);
-                    Storage.adminModeToggle.add(player.getUniqueId());
+                    Inf.adminModeToggle.add(player.getUniqueId());
                     player.sendMessage(ChatColor.GREEN + "Adminmode Toggled ON");
                 }
                 else {
@@ -25,16 +25,16 @@ public class AdminMode implements CommandExecutor {
                     player.setAllowFlight(false);
                     player.setFlying(false);
                     player.setNoDamageTicks(2000);
-                    Storage.adminModeToggle.remove(player.getUniqueId());
+                    Inf.adminModeToggle.remove(player.getUniqueId());
                     player.sendMessage(ChatColor.GREEN + "Adminmode Toggled OFF");
                 }
             }
             else {
-                player.sendMessage(Storage.errColor + Storage.noPerms);
+                player.sendMessage(Inf.errColor + Inf.noPerms);
             }
         }
         else {
-            sender.sendMessage(Storage.errColor + Storage.noPerms);
+            sender.sendMessage(Inf.errColor + Inf.noPerms);
         }
         return true;
     }

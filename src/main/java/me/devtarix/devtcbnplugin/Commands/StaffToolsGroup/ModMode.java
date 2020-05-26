@@ -1,6 +1,6 @@
 package me.devtarix.devtcbnplugin.Commands.StaffToolsGroup;
 
-import me.devtarix.devtcbnplugin.Util.Storage;
+import me.devtarix.devtcbnplugin.Util.Inf;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
@@ -13,27 +13,27 @@ public class ModMode implements CommandExecutor {
         if(sender instanceof Player) {
             Player player = (Player) sender;
             if (player.hasPermission("devtcbn.staff.modmode") || player.isOp()) {
-                if(!Storage.modModeToggle.contains(player.getUniqueId())) {
+                if(!Inf.modModeToggle.contains(player.getUniqueId())) {
                     player.setCanPickupItems(false);
                     player.setGameMode(GameMode.SPECTATOR);
                     player.setNoDamageTicks(99999999);
-                    Storage.modModeToggle.add(player.getUniqueId());
+                    Inf.modModeToggle.add(player.getUniqueId());
                     player.sendMessage(ChatColor.GREEN + "Toggled Modmode ON");
                 }
                 else {
                     player.setCanPickupItems(true);
                     player.setGameMode(GameMode.SURVIVAL);
                     player.setNoDamageTicks(200);
-                    Storage.modModeToggle.remove(player.getUniqueId());
+                    Inf.modModeToggle.remove(player.getUniqueId());
                     player.sendMessage(ChatColor.GREEN + "Toggled Modmode OFF");
                 }
             }
             else {
-                player.sendMessage(Storage.errColor + Storage.noPerms);
+                player.sendMessage(Inf.errColor + Inf.noPerms);
             }
         }
         else {
-            sender.sendMessage(Storage.errColor + Storage.noPerms);
+            sender.sendMessage(Inf.errColor + Inf.noPerms);
         }
         return true;
     }
