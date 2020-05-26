@@ -109,6 +109,7 @@ permissions:
       devtcbn.broadcastposition: true
       devtcbn.skeletontoggle: true
       devtcbn.gamemode.*: true
+      devtcbn.book: true
   devtcbndebug.*:
     description: A debug command, has no function
     default: op
@@ -134,6 +135,9 @@ permissions:
     default: false
   devtcbn.update:
     description: Reloads all data unlike restarting all plugins this only forces files to be reloaded
+    default: false
+  devtcbn.book:
+    description: Opens a book?
     default: false
   devtcbndebug.debug1:
     description: A debug permission which doesn't work

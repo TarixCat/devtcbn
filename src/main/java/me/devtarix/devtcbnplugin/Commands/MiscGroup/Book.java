@@ -33,6 +33,8 @@ public class Book implements CommandExecutor {
                 bookMeta.setAuthor("TheCatBoxNetwork");
 
                 book.setItemMeta(bookMeta);
+
+                player.openBook(book);
             } else {
                 sender.sendMessage(Inf.errColor + Inf.noPerms);
             }
