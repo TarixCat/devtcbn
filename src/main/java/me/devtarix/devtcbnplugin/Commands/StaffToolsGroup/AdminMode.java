@@ -30,11 +30,11 @@ public class AdminMode implements CommandExecutor {
                 }
             }
             else {
-                player.sendMessage(Inf.errColor + Inf.noPerms);
+                player.sendMessage(Inf.E + Inf.noPerms);
             }
         }
         else {
-            sender.sendMessage(Inf.errColor + Inf.noPerms);
+            sender.sendMessage(Inf.E + Inf.noPerms);
         }
         return true;
     }

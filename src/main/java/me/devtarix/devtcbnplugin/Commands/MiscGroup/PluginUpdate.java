@@ -18,7 +18,7 @@ public class PluginUpdate implements CommandExecutor {
                 player.getServer().broadcastMessage(ChatColor.RED + "Reloaded Data...");
             }
             else {
-                player.sendMessage(Inf.errColor + Inf.noPerms);
+                player.sendMessage(Inf.E + Inf.noPerms);
             }
         }
         else {

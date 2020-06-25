@@ -32,12 +32,12 @@ public class Help implements CommandExecutor {
                 player.sendMessage(ChatColor.GOLD + "------------------");
             }
             else {
-                player.sendMessage(Inf.errColor + Inf.noPerms);
+                player.sendMessage(Inf.E + Inf.noPerms);
             }
         }
         else {
-            sender.sendMessage(Inf.errColor + Inf.notPlayer);
+            sender.sendMessage(Inf.E + Inf.notPlayer);
         }
-        return true;
+        return false;
     }
 }

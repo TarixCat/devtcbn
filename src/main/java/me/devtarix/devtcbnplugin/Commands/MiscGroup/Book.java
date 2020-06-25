@@ -36,11 +36,11 @@ public class Book implements CommandExecutor {
 
                 player.openBook(book);
             } else {
-                sender.sendMessage(Inf.errColor + Inf.noPerms);
+                sender.sendMessage(Inf.E + Inf.noPerms);
             }
         }
         else {
-            sender.sendMessage(Inf.errColor + Inf.notPlayer);
+            sender.sendMessage(Inf.E + Inf.notPlayer);
         }
         return true;
     }

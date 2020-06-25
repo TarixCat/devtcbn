@@ -21,11 +21,11 @@ public class PositionBroadcast implements CommandExecutor {
                 Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Player: " + ChatColor.WHITE + player.getName() + ChatColor.GREEN + " Location X=" + blockX + " Y=" + blockY + " Z=" + blockZ);
             }
             else {
-                player.sendMessage(Inf.errColor + Inf.noPerms);
+                player.sendMessage(Inf.E + Inf.noPerms);
             }
         }
         else {
-            sender.sendMessage(Inf.errColor + Inf.notPlayer);
+            sender.sendMessage(Inf.E + Inf.notPlayer);
         }
         return true;
     }

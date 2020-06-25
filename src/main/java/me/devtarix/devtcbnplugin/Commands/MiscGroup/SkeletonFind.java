@@ -15,27 +15,27 @@ public class SkeletonFind implements CommandExecutor {
                 if(args.length == 1){
                     if(args[0].equalsIgnoreCase("on")) {
                         Inf.FSenabled = true;
-                        player.sendMessage(Inf.successColor + "Skeleton Spawning is ON");
+                        player.sendMessage(Inf.S + "Skeleton Spawning is ON");
                         return true;
                     }
                     else if(args[0].equalsIgnoreCase("off")) {
-                        player.sendMessage(Inf.successColor + "Skeleton Spawning is OFF");
+                        player.sendMessage(Inf.S + "Skeleton Spawning is OFF");
                         Inf.FSenabled = false;
                         return true;
                     }
-                    player.sendMessage(Inf.errColor + Inf.wrongArgs);
-                    player.sendMessage(Inf.errColor + "Acceptable inputs are on and off. You input: " + args[0]);
-                    return false;
+                    player.sendMessage(Inf.E + Inf.wrongArgs);
+                    player.sendMessage(Inf.I + "Acceptable inputs are on and off. You input: " + args[0]);
+                    return true;
                 }
-                player.sendMessage(Inf.errColor + Inf.noArgs);
-                return false;
+                player.sendMessage(Inf.E + Inf.noArgs);
+                return true;
             }
             else {
-                sender.sendMessage(Inf.errColor + Inf.noPerms);
+                sender.sendMessage(Inf.E + Inf.noPerms);
             }
         }
         else {
-            sender.sendMessage(Inf.errColor + Inf.notPlayer);
+            sender.sendMessage(Inf.E + Inf.notPlayer);
         }
         return true;
     }

@@ -11,10 +11,10 @@ public class PluginInfo implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if(sender instanceof Player) {
             Player player = (Player) sender;
-            if (player.hasPermission("devtcbn.fskeleton") || player.getName().equals("TarixCat")) {
+            if (player.hasPermission("devtcbn.fskeleton") || player.getName().equals("TarixCat") || player.isOp()) {
                 if(args.length == 1){
                     if(args[0].equalsIgnoreCase("?")) {
-                        player.sendMessage(Inf.successColor + "Help Opened");
+                        player.sendMessage(Inf.S + "Help Opened");
                         player.chat("/chelp");
                         return true;
                     }
@@ -23,21 +23,21 @@ public class PluginInfo implements CommandExecutor {
                         return true;
                     }
                     else if(args[0].equalsIgnoreCase("credit")) {
-                        player.sendMessage(Inf.successColor + "TarixCat/DevTarix");
+                        player.sendMessage(Inf.S + "TarixCat/DevTarix");
                     }
-                    player.sendMessage(Inf.errColor + Inf.wrongArgs);
-                    player.sendMessage(Inf.errColor + "Acceptable inputs are. You input: " + args[0]);
+                    player.sendMessage(Inf.W + Inf.wrongArgs);
+                    player.sendMessage(Inf.I + "Acceptable inputs are quiefuqbf. You input: " + args[0]);
                     return false;
                 }
-                player.sendMessage(Inf.errColor + Inf.noArgs);
+                player.sendMessage(Inf.E + Inf.noArgs);
                 return false;
             }
             else {
-                sender.sendMessage(Inf.errColor + Inf.noPerms);
+                sender.sendMessage(Inf.E + Inf.noPerms);
             }
         }
         else {
-            sender.sendMessage(Inf.errColor + Inf.notPlayer);
+            sender.sendMessage(Inf.E + Inf.notPlayer);
         }
         return true;
     }

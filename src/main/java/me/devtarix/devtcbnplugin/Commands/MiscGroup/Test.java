@@ -18,11 +18,11 @@ public class Test implements CommandExecutor {
                 sender.sendMessage("Testing Direct Chat");
                 DevTCBNPlugin.log(Level.INFO, "Testing Logging");
             } else {
-                sender.sendMessage(Inf.errColor + Inf.noPerms);
+                sender.sendMessage(Inf.E + Inf.noPerms);
             }
         }
         else {
-            sender.sendMessage(Inf.errColor + Inf.notPlayer);
+            sender.sendMessage(Inf.E + Inf.notPlayer);
         }
         return true;
     }

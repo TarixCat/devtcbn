@@ -16,16 +16,18 @@ public class OtherPositions implements CommandExecutor {
                 Player target = Bukkit.getPlayer(args[0]);
                 String reqName = args[0];
 
-                if(Bukkit.getPlayer(reqName).isValid() == false) {
-                    player.sendMessage(ChatColor.RED + "Requested player's name is not valid");
+                if(!target.isOnline()) {
+                    player.sendMessage(Inf.W + Inf.notFound);
+                    player.sendMessage(Inf.I + "Also check the spelling!");
                 }
+                else {
+                    double TblockX = target.getPlayer().getLocation().getBlockX();
+                    double TblockY = target.getPlayer().getLocation().getBlockY();
+                    double TblockZ = target.getPlayer().getLocation().getBlockZ();
 
-                double TblockX = target.getPlayer().getLocation().getBlockX();
-                double TblockY = target.getPlayer().getLocation().getBlockY();
-                double TblockZ = target.getPlayer().getLocation().getBlockZ();
-
-                player.sendMessage(ChatColor.GREEN + "Printing Target Location...");
-                player.sendMessage(ChatColor.GREEN + "Location X=" + TblockX + " Y=" + TblockY + " Z=" + TblockZ);
+                    player.sendMessage(ChatColor.GREEN + "Printing Target Location...");
+                    player.sendMessage(ChatColor.GREEN + "Location X=" + TblockX + " Y=" + TblockY + " Z=" + TblockZ);
+                }
             }
             else {
                 player.sendMessage(ChatColor.RED + Inf.noPerms);

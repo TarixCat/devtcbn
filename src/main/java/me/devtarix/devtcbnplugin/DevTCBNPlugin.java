@@ -4,10 +4,7 @@ import me.devtarix.devtcbnplugin.Commands.GamemodeGroup.AdventureCMD;
 import me.devtarix.devtcbnplugin.Commands.GamemodeGroup.CreativeCMD;
 import me.devtarix.devtcbnplugin.Commands.GamemodeGroup.SpectatorCMD;
 import me.devtarix.devtcbnplugin.Commands.GamemodeGroup.SurvivalCMD;
-import me.devtarix.devtcbnplugin.Commands.MiscGroup.InProgress;
-import me.devtarix.devtcbnplugin.Commands.MiscGroup.PluginUpdate;
-import me.devtarix.devtcbnplugin.Commands.MiscGroup.SkeletonFind;
-import me.devtarix.devtcbnplugin.Commands.MiscGroup.Test;
+import me.devtarix.devtcbnplugin.Commands.MiscGroup.*;
 import me.devtarix.devtcbnplugin.Commands.PositionGroup.OtherPositions;
 import me.devtarix.devtcbnplugin.Commands.PositionGroup.Position;
 import me.devtarix.devtcbnplugin.Commands.PositionGroup.PositionBroadcast;
@@ -69,6 +66,7 @@ public final class DevTCBNPlugin extends JavaPlugin {
         this.getCommand("modmode").setExecutor(new ModMode());
         this.getCommand("adminmode").setExecutor(new AdminMode());
         this.getCommand("skelespawn").setExecutor(new SkeletonFind());
+        this.getCommand("twcreate").setExecutor(new TestWorldCreator());
     }
 
     @Override

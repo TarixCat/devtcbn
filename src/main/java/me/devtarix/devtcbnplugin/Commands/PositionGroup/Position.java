@@ -20,11 +20,11 @@ public class Position implements CommandExecutor {
                 player.sendMessage(ChatColor.GREEN + "Location X=" + blockX + " Y=" + blockY + " Z=" + blockZ);
             }
             else {
-                player.sendMessage(Inf.errColor + Inf.noPerms);
+                player.sendMessage(Inf.E + Inf.noPerms);
             }
         }
         else {
-            sender.sendMessage(Inf.errColor + Inf.noPerms);
+            sender.sendMessage(Inf.E + Inf.noPerms);
         }
         return true;
     }
